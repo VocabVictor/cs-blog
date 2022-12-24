@@ -361,7 +361,7 @@ theme = "FixIt"
       # 是否显示代码块的复制按钮
       copy = true
       #  是否显示代码块的编辑按钮
-      edit = true
+      edit = false
       # 默认展开显示的代码行数
       maxShownLines = 10
     #  文章编辑
@@ -436,7 +436,7 @@ theme = "FixIt"
       Renren = false
       Myspace = true
       Blogger = true
-      Baidu = false
+      Baidu = true
       Odnoklassniki = false
       Evernote = true
       Skype = false
@@ -444,7 +444,7 @@ theme = "FixIt"
       Mix = false
     #  评论系统设置
     [params.page.comment]
-      enable = false
+      enable = true
       #  Artalk 评论系统设置 (https://artalk.js.org/)
       [params.page.comment.artalk]
         enable = false
@@ -466,11 +466,11 @@ theme = "FixIt"
         shortname = ""
       #  Gitalk 评论系统设置 (https://github.com/gitalk/gitalk)
       [params.page.comment.gitalk]
-        enable = false
-        owner = ""
+        enable = true
+        owner = "VocabVictor"
         repo = ""
-        clientId = ""
-        clientSecret = ""
+        clientId = "12cd1164dc35f38b37ea"
+        clientSecret = "709ab1fe913eeb5db4cdbe2338b156bd042e9b4e"
       # Valine 评论系统设置 (https://github.com/xCss/Valine)
       [params.page.comment.valine]
         enable = false
