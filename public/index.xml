@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>山中书半</title>
+    <link>http://example.org/</link>
+    <description>这是山中书半</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Dec 2022 01:23:57 &#43;0800</lastBuildDate>
+      <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+  <title>First Blog</title>
+  <link>http://example.org/first-blog/</link>
+  <pubDate>Sat, 24 Dec 2022 01:23:57 &#43;0800</pubDate>
+  <author>666</author>
+  <guid>http://example.org/first-blog/</guid>
+  <description><![CDATA[毕业设计题目 NLP 对话系统 抽取式对答任务迁移——自然语言与SQL的互译方法研究 结合中文常识图谱的多轮可控对话研究 基于DQN（深度强化学习）的开放]]></description>
+</item>
+</channel>
+</rss>
