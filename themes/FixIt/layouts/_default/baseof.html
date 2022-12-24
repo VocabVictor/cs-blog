@@ -17,10 +17,12 @@
   </head>
   <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
     {{- /* Check theme isDark before body rendering */ -}}
+    <div id="web_bg"></div>
     {{- $theme := .Site.Params.defaulttheme -}}
     <script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script>
     {{- /* Body wrapper */ -}}
-    <div class="wrapper">
+    {{- $bg := resources.Get "images/bg.jpg" -}}
+    <div class="wrapper" style="background-image: url({{$bg}});">
       {{- partial "header.html" . -}}
       {{- $toc := .Scratch.Get "toc" -}}
       <main class="container{{ if (eq $toc.enable true) | and (eq $toc.position `left`) }}-reverse{{ end }}" data-page-style="{{ (.Scratch.Get `params`).pageStyle | default `normal` }}">
@@ -34,5 +36,9 @@
 
     {{- /* Load JavaScript scripts and CSS */ -}}
     {{- partial "assets.html" . -}}
+    <span id="fps">
+      FPS:95 
+      <span style="color:#39c5bb">十分流畅🤣</span>
+    </span>
   </body>
 </html>

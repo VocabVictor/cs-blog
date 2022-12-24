@@ -12,11 +12,11 @@ theme = "FixIt"
 
 [params]
   # 背景图片
-  wrapperBackgroundImage = "/images/bg.jpg"
+  bgimage = "/images/bg.jpg"
   #  FixIt 主题版本
   version = "0.2.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
   # 网站描述
-  description = "这是山中书半"
+  description = "Hope you have a nice day!🍭🍭"
   # 网站关键词
   keywords = ["Hugo", "FixIt"]
   # 网站默认主题样式 ["light", "dark", "auto"]
@@ -194,9 +194,9 @@ theme = "FixIt"
       #  头像菜单链接的 identifier
       avatarMenu = ""
       #  主页显示的网站标题（支持 HTML 格式）
-      title = ""
+      title = "Fomalhaut🥝"
       # 主页显示的网站副标题
-      subtitle = "这是山中书半"
+      subtitle = "Hope you have a nice day!🍭🍭"
       # 是否为副标题显示打字机动画
       typeit = true
       # 是否显示社交账号
