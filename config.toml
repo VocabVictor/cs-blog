@@ -466,7 +466,7 @@ theme = "FixIt"
         shortname = ""
       #  Gitalk 评论系统设置 (https://github.com/gitalk/gitalk)
       [params.page.comment.gitalk]
-        enable = true
+        enable = false
         owner = "VocabVictor"
         repo = ""
         clientId = "12cd1164dc35f38b37ea"
@@ -534,9 +534,9 @@ theme = "FixIt"
       [params.page.comment.utterances]
         enable = false
         # owner/repo
-        repo = ""
+        repo = "VocabVictor/cs-blog"
         issueTerm = "pathname"
-        label = ""
+        label = "comment"
         lightTheme = "github-light"
         darkTheme = "github-dark"
       #  Twikoo 评论系统设置 (https://twikoo.js.org/)
