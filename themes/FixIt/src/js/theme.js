@@ -793,13 +793,16 @@ class FixIt {
   }
 
   initTypeit() {
+    console.log(this.config.typeit)
     if (this.config.typeit) {
       const typeitConfig = this.config.typeit;
       const speed = typeitConfig.speed || 100;
       const cursorSpeed = typeitConfig.cursorSpeed || 1000;
       const cursorChar = typeitConfig.cursorChar || '|';
+      console.log("typeitconfig",typeitConfig.data)
       Object.values(typeitConfig.data).forEach((group) => {
         const typeone = (i) => {
+          console.log(i)
           const id = group[i];
           const instance = new TypeIt(`#${id}`, {
             strings: this.data[id],
@@ -812,14 +815,14 @@ class FixIt {
               if (i === group.length - 1) {
                 if (typeitConfig.duration >= 0) {
                   window.setTimeout(() => {
-                    instance.destroy();
+                    instance.reset()
                   }, typeitConfig.duration);
                 }
                 return;
               }
-              instance.destroy();
+              instance.reset();
               typeone(i + 1);
-            }
+            }            
           }).go();
         };
         typeone(0);
@@ -1235,6 +1238,7 @@ class FixIt {
   }
 
   init() {
+    console.log(window.config)
     try {
       if (this.config.encryption) {
         this.initFixItDecryptor();

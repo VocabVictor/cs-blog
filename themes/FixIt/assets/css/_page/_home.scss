@@ -1,4 +1,10 @@
 .home {
+  color:$home-font-color;
+
+  [data-theme='dark'] & {
+    color:$home-font-color-dark;
+  }
+  
   .home-profile {
     text-align: center;
 
@@ -29,9 +35,9 @@
     }
 
     .home-subtitle {
-      font-size: 1rem;
+      font-size: 2rem;
       font-weight: normal;
-      margin: 0;
+      margin: 10px 0 0 0;
       padding: 0.5rem;
     }
 

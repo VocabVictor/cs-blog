@@ -6,20 +6,21 @@ var idx = 0;
 // 切换颜色
 function changeColor() {
     // 仅夜间模式才启用
-    if ($('body').data('data-theme') === 'dark') {
+    if ($('body').data('theme') === 'dark') {
+        if (idx >= 8 ) {
+            idx = 0;
+        }
         // 遍历所有类名中包含 header、footer、title 的类，且不在 .page 内的标签
         $('[class*="header"], [class*="footer"], [class*="title"]').not('.page *').each(function() {
             $(this).css('text-shadow', arr[idx] + " 0 0 15px");
         });
         idx++;
-        if (idx === 8) {
-            idx = 0;
-        }
-    } else {
+    } else if( id <= 8 ){
         // 白天模式恢复默认
         $('[class*="header"], [class*="footer"], [class*="title"]').not('.page *').each(function() {
             $(this).css('text-shadow', "none");
         });
+        id = 9;
     }
 }
 
