@@ -532,7 +532,7 @@ theme = "FixIt"
         enable = false
       #  Utterances 评论系统设置 (https://utteranc.es)
       [params.page.comment.utterances]
-        enable = false
+        enable = true
         # owner/repo
         repo = "VocabVictor/cs-blog"
         issueTerm = "pathname"
