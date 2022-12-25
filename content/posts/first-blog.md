@@ -149,4 +149,10 @@ repost:
 ### 数据集
 
 #### 中文讽刺数据集
-
+```c++
+#include<stdio.h>
+int main()
+{
+  
+}
+```

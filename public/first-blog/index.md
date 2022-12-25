@@ -112,5 +112,5 @@
 ---
 
 > 作者: 666  
-> URL: http://example.org/first-blog/  
+> URL: https://cs-blog-beta.vercel.app/first-blog/  
 

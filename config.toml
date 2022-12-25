@@ -574,7 +574,9 @@ theme = "FixIt"
         # someJavascript = "some.js"
         # 位于 "assets/"
         # 或者
-        # someJavascript = "https://cdn.example.com/some.js"
+        jquery = "https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"
+        universescript = "js/universe.js"
+        lightsacript = "js/light.js"
     #  页面 SEO 配置
     [params.page.seo]
       # 图片 URL
@@ -708,11 +710,11 @@ theme = "FixIt"
   [params.backToTop]
     enable = true
     # 在 b2t 按钮中显示滚动百分比
-    scrollpercent = false
+    scrollpercent = true
 
   #  阅读进度条
   [params.readingProgress]
-    enable = false
+    enable = true
     # 可用值：["left", "right"]
     start = "left"
     # 可用值：["top", "bottom"]

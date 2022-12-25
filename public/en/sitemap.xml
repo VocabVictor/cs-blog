@@ -2,42 +2,42 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>http://example.org/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/en/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
             rel="alternate"
             hreflang="zh-cn"
-            href="http://example.org/categories/"
+            href="https://cs-blog-beta.vercel.app/categories/"
             /><xhtml:link
             rel="alternate"
             hreflang="fr"
-            href="http://example.org/fr/categories/"
+            href="https://cs-blog-beta.vercel.app/fr/categories/"
             /><xhtml:link
           rel="alternate"
           hreflang="en"
-          href="http://example.org/en/categories/"
+          href="https://cs-blog-beta.vercel.app/en/categories/"
           /></url><url>
-      <loc>http://example.org/en/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/en/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
             rel="alternate"
             hreflang="zh-cn"
-            href="http://example.org/"
+            href="https://cs-blog-beta.vercel.app/"
             /><xhtml:link
             rel="alternate"
             hreflang="fr"
-            href="http://example.org/fr/"
+            href="https://cs-blog-beta.vercel.app/fr/"
             /><xhtml:link
           rel="alternate"
           hreflang="en"
-          href="http://example.org/en/"
+          href="https://cs-blog-beta.vercel.app/en/"
           /></url><url>
-      <loc>http://example.org/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/en/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
             rel="alternate"
             hreflang="zh-cn"
-            href="http://example.org/tags/"
+            href="https://cs-blog-beta.vercel.app/tags/"
             /><xhtml:link
             rel="alternate"
             hreflang="fr"
-            href="http://example.org/fr/tags/"
+            href="https://cs-blog-beta.vercel.app/fr/tags/"
             /><xhtml:link
           rel="alternate"
           hreflang="en"
-          href="http://example.org/en/tags/"
+          href="https://cs-blog-beta.vercel.app/en/tags/"
           /></url></urlset>

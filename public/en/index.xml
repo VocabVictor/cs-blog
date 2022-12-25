@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>My New Hugo FixIt Site</title>
-    <link>http://example.org/en/</link>
-    <description>这是山中书半</description>
+    <link>https://cs-blog-beta.vercel.app/en/</link>
+    <description>Hope you have a nice day!🍭🍭</description>
     <generator>Hugo -- gohugo.io</generator><language>en</language>
-      <atom:link href="http://example.org/en/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="https://cs-blog-beta.vercel.app/en/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
