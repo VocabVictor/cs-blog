@@ -410,8 +410,8 @@ theme = "FixIt"
       [params.page.reward.ways]
         wechatpay = "/images/wechatpay.png"
         alipay = "/images/alipay.png"
-        paypal = "/images/paypal.png"
-        bitcoin = "/images/bitcoin.png"
+        # paypal = "/images/paypal.png"
+        # bitcoin = "/images/bitcoin.png"
     #  文章页面的分享信息设置
     [params.page.share]
       enable = true
