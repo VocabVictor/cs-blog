@@ -375,11 +375,11 @@ theme = "FixIt"
     [params.page.math]
       enable = true
       # 默认行内定界符是 $ ... $ 和 \( ... \)
-      inlineLeftDelimiter = ""
-      inlineRightDelimiter = ""
+      # inlineLeftDelimiter = ""
+      # inlineRightDelimiter = ""
       # 默认块定界符是 $$ ... $$, \[ ... \],  \begin{equation} ... \end{equation} 和一些其它的函数
-      blockLeftDelimiter = ""
-      blockRightDelimiter = ""
+      # blockLeftDelimiter = ""
+      # blockRightDelimiter = ""
       # KaTeX 插件 copy_tex
       copyTex = true
       # KaTeX 插件 mhchem
