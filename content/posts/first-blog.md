@@ -7,8 +7,8 @@ author: "666"
 authorLink: ""
 authorEmail: ""
 description: ""
-keywords: ""
-license: ""
+keywords: "机器学习，深度学习"
+license: "MIT"
 comment: true
 weight: 0
 
@@ -32,8 +32,8 @@ resources:
 toc:
   enable: true
 math:
-  enable: false
-lightgallery: false
+  enable: true
+lightgallery: true
 seo:
   images: []
 
@@ -156,7 +156,7 @@ int main()
 ```
 ![在这里插入图片描述](https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-ee0dabe2385b4914a6b3a6cc090cf278.png)
 
-
+$$ c = \pm\sqrt{a^2 + b^2} $$
 $$ c = \pm\sqrt{a^2 + b^2} $$
 
 \\[ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\]
