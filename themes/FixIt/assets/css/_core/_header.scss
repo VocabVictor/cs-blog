@@ -8,9 +8,9 @@ header {
   //   background-color: $header-background-color-dark;
   // }
 
-  &:hover {
-    @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, 0.1));
-  }
+  // &:hover {
+  //   @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, 0.1));
+  // }
 }
 
 
@@ -30,7 +30,7 @@ header {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  @include flex(10);
+  // @include flex(10);
 
   .logo {
     min-height: 1.5em;
@@ -224,6 +224,13 @@ header {
         }
       }
 
+      .menu-item::before{
+        width: 0%;
+        height: 10px;
+        background-color: green;
+        transition: width 0.3s ease-in-out;
+      }
+
       .menu-item {
         padding: 0 0.5rem;
 
@@ -238,8 +245,12 @@ header {
           }
         }
 
-        &.language {
+        &.language,&.language {
           margin-right: 0;
+          color: $home-font-color;
+          i::before {
+            color: $home-font-color;
+          }
         }
       }
 

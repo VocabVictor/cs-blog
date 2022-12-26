@@ -4,7 +4,11 @@ footer {
   text-align: center;
   line-height: 1.25rem;
   padding: 1rem 0;
+  color: $home-font-color;
 
+  [data-theme="dark"] & {
+    color: $home-font-color-dark;
+  }
   .footer-container {
     display: flex;
     flex-direction: column;

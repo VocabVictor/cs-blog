@@ -11,8 +11,9 @@ hasCJKLanguage = true
 theme = "FixIt"
 
 [params]
-  # 背景图片
-  bgimage = "/images/bg.jpg"
+  # 背景图片,支持本地资源和网络资源
+  lightimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
+  darkimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
   #  FixIt 主题版本
   version = "0.2.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
   # 网站描述
@@ -174,7 +175,7 @@ theme = "FixIt"
 
   #  标签云配置
   [params.tagcloud]
-    enable = false
+    enable = true
     min = 14 # 最小字体大小，单位：px
     max = 32 # 最大字体大小，单位：px
     peakCount = 10 # 每个标签的最大文章数
@@ -610,11 +611,11 @@ theme = "FixIt"
   #  水印配置
   # 详细参数见 https://github.com/Lruihao/watermark#readme
   [params.watermark]
-    enable = false
+    enable = true
     # 水印内容（允许 HTML 格式）
     content = ""
     # 水印透明度
-    opacity = 0.1
+    opacity = 0.05
     # 水印父节点
     appendTo = ".wrapper>main"
     # 单水印宽度 单位：px

@@ -1,5 +1,7 @@
 {{- partial "init/index.html" . -}}
-
+{{/*  我现在想要绑定一个在配置文件中名叫bg的变量，该变量有可能是网络路径的图片，有可能是本地路径  */}}
+{{- $lightimage := .Site.Params.lightimage -}}
+{{- $darkimage := .Site.Params.darkimage -}}
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.LanguageCode }}">
   <head>
@@ -22,8 +24,8 @@
     {{- $theme := .Site.Params.defaulttheme -}}
     <script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script>
     {{- /* Body wrapper */ -}}
-    {{- $bg := resources.Get "images/bg.jpg" -}}
-    <div class="wrapper" style="background-image: url({{$bg}});">
+    
+    <div class="wrapper">
       {{- partial "header.html" . -}}
       {{- $toc := .Scratch.Get "toc" -}}
       <main class="container{{ if (eq $toc.enable true) | and (eq $toc.position `left`) }}-reverse{{ end }}" data-page-style="{{ (.Scratch.Get `params`).pageStyle | default `normal` }}">
@@ -37,9 +39,18 @@
 
     {{- /* Load JavaScript scripts and CSS */ -}}
     {{- partial "assets.html" . -}}
-    <span id="fps">
+    {{/*  <span id="fps">
       FPS:95 
       <span style="color:#39c5bb">十分流畅🤣</span>
-    </span>
+    </span>  */}}
   </body>
 </html>
+<style>
+  .wrapper{
+    background-image: url("{{ $lightimage }}");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+  }
+</style>
