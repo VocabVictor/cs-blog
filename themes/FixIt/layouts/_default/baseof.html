@@ -19,13 +19,13 @@
   </head>
   <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
     {{- /* Check theme isDark before body rendering */ -}}
-    <div id="web_bg"></div>
-    <canvas id="universe"></canvas>
     {{- $theme := .Site.Params.defaulttheme -}}
     <script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script>
     {{- /* Body wrapper */ -}}
     
     <div class="wrapper">
+      <div id="web_bg"></div>
+      <canvas id="universe"></canvas>
       {{- partial "header.html" . -}}
       {{- $toc := .Scratch.Get "toc" -}}
       <main class="container{{ if (eq $toc.enable true) | and (eq $toc.position `left`) }}-reverse{{ end }}" data-page-style="{{ (.Scratch.Get `params`).pageStyle | default `normal` }}">
@@ -46,7 +46,7 @@
   </body>
 </html>
 <style>
-  .wrapper{
+  body{
     background-image: url("{{ $lightimage }}");
     background-size:cover;
     background-position:center;

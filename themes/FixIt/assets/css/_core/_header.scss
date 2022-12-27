@@ -54,8 +54,31 @@ header {
   margin: 0;
   padding: 0;
 
+  >.menu-item{
+    >.menu-link:hover{
+      &::before{
+        width: 100px;
+      }
+    }
+
+    >.menu-link::before{
+      position:absolute;
+      bottom: 0;
+      content: "1";
+      width: 0;
+      height: 2px;
+      background-color: green;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+
   .menu-item {
     list-style: none;
+
+    .menu-link{
+      position: relative;
+      overflow-x: hidden;
+    }
 
     & .dropdown-icon {
       margin-left: 0.25rem;
@@ -72,6 +95,7 @@ header {
     }
 
     &.active {
+
       >.menu-link,
       >.nested-item>.menu-link {
         font-weight: bold;
@@ -218,17 +242,11 @@ header {
       float: right;
 
       >.menu-item:hover {
+
         & .sub-menu {
           display: block;
           transform: translateX(-0.5rem);
         }
-      }
-
-      .menu-item::before{
-        width: 0%;
-        height: 10px;
-        background-color: green;
-        transition: width 0.3s ease-in-out;
       }
 
       .menu-item {
@@ -245,9 +263,11 @@ header {
           }
         }
 
-        &.language,&.language {
+        &.language,
+        &.language {
           margin-right: 0;
           color: $home-font-color;
+
           i::before {
             color: $home-font-color;
           }
@@ -386,7 +406,7 @@ header {
 
       .search-loading,
       .search-clear {
-        right:  0.5rem;
+        right: 0.5rem;
       }
 
       .search-button {
@@ -416,7 +436,7 @@ header {
           display: block;
           white-space: nowrap;
           text-overflow: ellipsis;
-          overflow-x: hidden;
+          position: relative;
           @include flex(4);
         }
 
@@ -429,7 +449,7 @@ header {
             max-width: 80%;
           }
         }
-        
+
         &.theme-switch,
         &.language {
           text-align: center;
@@ -613,3 +633,4 @@ header {
     }
   }
 }
+

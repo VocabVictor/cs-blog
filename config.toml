@@ -577,6 +577,7 @@ theme = "FixIt"
         # 或者
         jquery = "https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"
         universescript = "js/universe.js"
+        lightscript = "js/light.js"
     #  页面 SEO 配置
     [params.page.seo]
       # 图片 URL
@@ -594,8 +595,17 @@ theme = "FixIt"
     cursorSpeed = 1000
     # 光标的字符（支持 HTML 格式）
     cursorChar = "|"
-    # 打字结束之后光标的持续时间（单位是毫秒，"-1" 代表无限大）
+    # 打字结束之后光标的持续时间（单位是毫秒）
     duration = 1000
+    # 删除光标的速度（单位是毫秒）
+    deleteSpeed = 100
+    # 是否循环
+    loop = true
+    # 是否让打字动画像人一样
+    lifeLike = true
+    # 是否让打字动画在页面加载完成之后开始
+    waitUntilVisible = true
+
 
   #  Mermaid 配置
   [params.mermaid]
@@ -652,13 +662,13 @@ theme = "FixIt"
   #  网站 SEO 配置
   [params.seo]
     # 图片 URL
-    image = ""
+    image = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
     # 缩略图 URL
-    thumbnailUrl = ""
+    thumbnailUrl = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
 
   #  网站分析配置
   [params.analytics]
-    enable = false
+    enable = true
     # Google Analytics
     [params.analytics.google]
       id = ""
@@ -727,14 +737,14 @@ theme = "FixIt"
   #  页面加载期间顶部的进度条
   # 有关详细信息：https://github.com/CodeByZach/pace
   [params.pace]
-    enable = false
+    enable = true
     # 所有可用颜色：
     # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
-    color = "blue"
+    color = "green"
     # 所有可用主题：
     # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
     # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
-    theme = "minimal"
+    theme = "barber-shop"
 
   #  定义自定义文件路径
   # 在站点目录 `layouts/partials/custom` 中创建您的自定义文件，并取消注释下面需要的文件
@@ -789,7 +799,7 @@ theme = "FixIt"
 # 作者配置
 [author]
   name = "VocabVictor"
-  email = ""
+  email = "w93854@outlook.com"
   link = ""
 
 # 网站地图配置
