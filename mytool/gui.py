@@ -262,7 +262,6 @@ class GUI(tk.Tk):
             self.config[key] = self.tkvar[key].get()
         # 保存配置到 config.json 文件中
         self.config.save()
-        print(self.config)
 
     def init_tkvar(self):
         # 初始化tkvar
