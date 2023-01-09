@@ -1,11 +1,6 @@
-from subprocess import Popen, PIPE
+import os
 
-output = Popen(["git", "add","*"], stdout=PIPE, stderr=PIPE)
-while True:
-    line = output.stdout.readline()
-    if not line:
-        break
-    print(line)
-# Popen(["git", "commit","-m","init"], stdout=PIPE, stderr=PIPE)
-# Popen(["git", "push","origin" "main"], stdout=PIPE, stderr=PIPE)
+os.system("git add *")
+os.system("git commit -m 'init'")
+os.system("git push origin main")
 
