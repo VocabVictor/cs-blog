@@ -35,7 +35,7 @@ class TencentTool:
         clientProfile = ClientProfile()
         clientProfile.httpProfile = httpProfile
         # 实例化要请求产品的client对象,clientProfile是可选的
-        self.client = cdn_client.CdnClient(cred, "", clientProfile)
+        self.cdn_client = cdn_client.CdnClient(cred, "", clientProfile)
 
         # 配置cos
         # 配置密钥信息和默认区域
@@ -155,6 +155,6 @@ class TencentTool:
         req.from_json_string(dumps(params))
 
         # 返回的resp是一个PurgeUrlsCacheResponse的实例，与请求对象对应
-        resp = self.client.PurgeUrlsCache(req)
+        resp = self.cdn_client.PurgeUrlsCache(req)
         # 输出json格式的字符串回包
         print(resp.to_json_string())
