@@ -105,7 +105,7 @@ class AutoCommit:
         if self.tencentcloud_oss:
             self.update_oss()
         if self.tencentcloud_cdn:
-            self.update_cdn()
+            self.update_cdn_cache()
 
 
     def start_server(self):
