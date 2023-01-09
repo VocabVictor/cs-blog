@@ -53,7 +53,7 @@ class AutoCommit:
     # 这样就可以检测到文件的变化了
     def get_modified_files(self):
         modified_files = []
-        for root, dirs, files in walk(self.blog_path):
+        for root, dirs, files in walk(self.blog_path + '/public'):
             for file in files:
                 file_path = root + '/' + file
                 if file_path in self.file_dict:

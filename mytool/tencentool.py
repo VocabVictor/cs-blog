@@ -57,8 +57,9 @@ class TencentTool:
         with ThreadPoolExecutor() as executor:
             # 提交所有任务
             futures = []
+            root = self.blog_path + '/public'
             for file_path in file_list:
-                key = relpath(file_path, self.blog_path).replace('\\', '/')
+                key = relpath(file_path, root).replace('\\', '/')
                 future = executor.submit(self.upload_file, key, file_path)
                 futures.append(future)
             # 等待所有任务完成
@@ -69,8 +70,9 @@ class TencentTool:
         with ThreadPoolExecutor() as executor:
             # 提交所有任务
             futures = []
+            root = self.blog_path + '/public'
             for file_path in file_list:
-                key = relpath(file_path, self.blog_path).replace('\\', '/')
+                key = relpath(file_path, root).replace('\\', '/')
                 future = executor.submit(self.del_file, key)
                 futures.append(future)
             # 等待所有任务完成
