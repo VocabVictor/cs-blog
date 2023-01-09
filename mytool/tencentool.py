@@ -78,26 +78,26 @@ class TencentTool:
                 print(future.result())        
 
     def del_file(self,key):
-        response = self.client.delete_object(
+        self.client.delete_object(
             Bucket=self.bucket,
-            Key=key,
+            Key=key
         )
-        return response
+        return key
 
     def upload_file(self,key,file_path):
         # 检查文件大小
         file_size = getsize(file_path)
         if file_size < self.max_file_size:
             # 如果文件小于 500MB，直接上传
-            response = self.client.put_object(
+            self.client.put_object(
                 Bucket=self.bucket,
                 Key=key,
                 Body=open(file_path, 'rb'),
             )
         else:
             # 否则，启动分片上传
-            response = self.upload_file_in_parts(key, file_path)
-        return response
+            self.upload_file_in_parts(key, file_path)
+        return key
 
     def upload_file_in_parts(self, key, file_path):
         # 初始化分片上传任务
@@ -142,7 +142,7 @@ class TencentTool:
         )
         return response
 
-    def update_cdn(self, urls=None):
+    def refresh_cdn_cache(self, urls=None):
         # 实例化一个请求对象,每个接口都会对应一个request对象
         req = models.PurgeUrlsCacheRequest()
         if isinstance(urls, str):

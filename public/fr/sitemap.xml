@@ -2,18 +2,18 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://cs-blog-beta.vercel.app/fr/categories.html</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/fr/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
             rel="alternate"
             hreflang="en"
-            href="https://cs-blog-beta.vercel.app/en/categories.html"
+            href="https://cs-blog-beta.vercel.app/en/categories/"
             /><xhtml:link
             rel="alternate"
             hreflang="zh-cn"
-            href="https://cs-blog-beta.vercel.app/categories.html"
+            href="https://cs-blog-beta.vercel.app/categories/"
             /><xhtml:link
           rel="alternate"
           hreflang="fr"
-          href="https://cs-blog-beta.vercel.app/fr/categories.html"
+          href="https://cs-blog-beta.vercel.app/fr/categories/"
           /></url><url>
       <loc>https://cs-blog-beta.vercel.app/fr/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
             rel="alternate"
@@ -28,16 +28,16 @@
           hreflang="fr"
           href="https://cs-blog-beta.vercel.app/fr/"
           /></url><url>
-      <loc>https://cs-blog-beta.vercel.app/fr/tags.html</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/fr/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
             rel="alternate"
             hreflang="en"
-            href="https://cs-blog-beta.vercel.app/en/tags.html"
+            href="https://cs-blog-beta.vercel.app/en/tags/"
             /><xhtml:link
             rel="alternate"
             hreflang="zh-cn"
-            href="https://cs-blog-beta.vercel.app/tags.html"
+            href="https://cs-blog-beta.vercel.app/tags/"
             /><xhtml:link
           rel="alternate"
           hreflang="fr"
-          href="https://cs-blog-beta.vercel.app/fr/tags.html"
+          href="https://cs-blog-beta.vercel.app/fr/tags/"
           /></url></urlset>

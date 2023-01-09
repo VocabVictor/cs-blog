@@ -80,6 +80,8 @@ class GUI(tk.Tk):
             self.button_frame, text='反选', command=self.select_invert)
         self.button_upload = tk.Button(
             self.button_frame, text='上传到腾讯云oss', command=self.update_oss)
+        self.button_cdn_cache = tk.Button(
+            self.button_frame, text='更新腾讯云cdn的缓存', command=self.update_cdn_cache)
         self.button_start = tk.Button(
             self.button_frame, text='启动', command=self.start_server)
         self.button_stop = tk.Button(
@@ -89,7 +91,7 @@ class GUI(tk.Tk):
         self.button_github = tk.Button(
             self.button_frame, text='提交到github和gitee', command=self.git_commit)
         self.button_deploy = tk.Button(
-            self.button_frame, text='一键部署', command=self.auto_commit.deploy)
+            self.button_frame, text='一键部署', command=self.deploy)
 
         # 以下是各种输入框，用于输入各种配置
         self.entry_frame = tk.Frame(self)
@@ -217,7 +219,18 @@ class GUI(tk.Tk):
     def update_oss(self):
         # 更新 OSS
         self.config['file_dict'] = self.auto_commit.update_oss()
+        self.save_config()
         self.log('更新 OSS 完成')
+
+    def update_cdn_cache(self):
+        # 更新 CDN 缓存
+        self.auto_commit.update_cdn_cache()
+        self.log('更新 CDN 缓存完成')
+
+    def deploy(self):
+        # 部署
+        self.auto_commit.deploy()
+        self.log('部署完成')
 
     def select_all(self):
         # 全选
@@ -249,7 +262,6 @@ class GUI(tk.Tk):
             self.config[key] = self.tkvar[key].get()
         # 保存配置到 config.json 文件中
         self.config.save()
-        print(self.config)
 
     def init_tkvar(self):
         # 初始化tkvar

@@ -78,6 +78,11 @@ class AutoCommit:
         system('git commit -m "update"')
         system('git push origin main')
 
+    def gitee_commit(self):
+        system('git add .')
+        system('git commit -m "update"')
+        system('git push gitee main')
+
     def update_oss(self):
         # 这里应该写代码来更新腾讯云 oss
         modified_files, self.file_dict = self.get_modified_files()
@@ -86,13 +91,22 @@ class AutoCommit:
         self.tencent_tool.delete_files(modified_files)
         return self.file_dict
 
-    def update_cdn(self):
-        # 这里应该写代码来更新腾讯云 cdn
-        pass
-
     def update_cdn_cache(self):
-        # 这里应该写代码来更新腾讯云 cdn 的缓存
-        pass
+        # 这里应该写代码来更新腾讯云 cdn
+        self.tencent_tool.refresh_cdn_cache()
+
+    def deploy(self):
+        # 这里应该写代码来部署到服务器
+        system('hugo')
+        if self.github:
+            self.git_commit()
+        if self.gitee:
+            self.gitee_commit()
+        if self.tencentcloud_oss:
+            self.update_oss()
+        if self.tencentcloud_cdn:
+            self.update_cdn()
+
 
     def start_server(self):
         # 这里应该写代码来启动本地服务
@@ -103,8 +117,4 @@ class AutoCommit:
         # 这里应该写代码来停止本地服务
         self.hugo_cmd.kill()
         return None
-
-    def deploy(self):
-        # 这里应该写代码来部署到服务器
-        pass
 
