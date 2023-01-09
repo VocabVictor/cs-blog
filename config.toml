@@ -6,7 +6,8 @@ defaultContentLanguage = "zh-cn"
 languageCode = "zh-CN"
 # 是否包括中日韩文字
 hasCJKLanguage = true
-
+# relativeURLs = true
+# uglyURLs = true
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = "FixIt"
 
@@ -647,7 +648,7 @@ theme = "FixIt"
   [params.ibruce]
     enable = true
     # 在文章中开启
-    enablePost = false
+    enablePost = true
 
   # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu/360/Sogou
   [params.verification]
