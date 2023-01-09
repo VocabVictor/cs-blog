@@ -79,7 +79,7 @@ class GUI(tk.Tk):
         self.button_select_invert = tk.Button(
             self.button_frame, text='反选', command=self.select_invert)
         self.button_upload = tk.Button(
-            self.button_frame, text='上传到腾讯云oss', command=self.auto_commit.update_oss)
+            self.button_frame, text='上传到腾讯云oss', command=self.update_oss)
         self.button_start = tk.Button(
             self.button_frame, text='启动', command=self.start_server)
         self.button_stop = tk.Button(
@@ -214,6 +214,11 @@ class GUI(tk.Tk):
         else:
             self.log('服务未启动')
 
+    def update_oss(self):
+        # 更新 OSS
+        self.config['file_dict'] = self.auto_commit.update_oss()
+        self.log('更新 OSS 完成')
+
     def select_all(self):
         # 全选
         self.tkvar['hugo'].set(True)
@@ -244,7 +249,7 @@ class GUI(tk.Tk):
             self.config[key] = self.tkvar[key].get()
         # 保存配置到 config.json 文件中
         self.config.save()
-        # print("保存配置成功",self.config)
+        print(self.config)
 
     def init_tkvar(self):
         # 初始化tkvar
@@ -299,7 +304,8 @@ class GUI(tk.Tk):
                 'gitee_password': '',
                 'oss_bucket': '',
                 'oss_region': '',
-                'cdn_domain': ''
+                'cdn_domain': '',
+                'file_dict':{}
             }
             self.config = Config('config.json', data)
             print("加载配置失败,已创建默认配置")

@@ -22,7 +22,8 @@
 from tencentool import TencentTool
 from os import chdir
 from subprocess import Popen, PIPE
-from os import system
+from os import system,walk
+from os.path import getmtime,exists
 class AutoCommit:
     def __init__(self):
         self.modified_files = []
@@ -38,6 +39,7 @@ class AutoCommit:
         else:
             info = None
         self.tencent_tool = TencentTool(
+            blog_path = self.blog_path,
             secret_id = self.secret_id,
             secret_key = self.secret_key,
             region = self.oss_region,
@@ -46,22 +48,30 @@ class AutoCommit:
         )
         return info
 
-    def find_modified_files(self):
-        # 这里应该写代码来检测文件变化
-        pass
-
+    # 使用walk函数遍历文件，并且记录下文件的更新时间，并把这个文件保存起来
+    # 当下一次启动时，如果检测到某一个文件不存在于字典，或者最后修改时间发生了变化，就把这个文件加入到modified_files列表中
+    # 这样就可以检测到文件的变化了
     def get_modified_files(self):
-        # 这里应该写代码来检测文件变化
-        pass
+        modified_files = []
+        for root, dirs, files in walk(self.blog_path):
+            for file in files:
+                file_path = root + '/' + file
+                if file_path in self.file_dict:
+                    if self.file_dict[file_path] != getmtime(file_path):
+                        modified_files.append(file_path)
+                else:
+                    self.file_dict[file_path] = getmtime(file_path)
+                    modified_files.append(file_path)
+        return modified_files, self.file_dict
 
-    def commit_to_github(self):
-        # 这里应该写代码来提交到 github
-        pass
-
-    def commit_to_gitee(self):
-        # 这里应该写代码来提交到 gitee
-        pass
-
+    def del_files(self):
+        del_modified_files = []
+        for path in self.file_dict:
+            if not exists(path):
+                del_modified_files.append(path)
+        self.file_dict = {key: value for key, value in self.file_dict.items() if key not in del_modified_files}
+        return del_modified_files, self.file_dict
+        
     def git_commit(self):
         # 这里应该写代码来提交到 github 和 gitee
         system('git add .')
@@ -70,7 +80,11 @@ class AutoCommit:
 
     def update_oss(self):
         # 这里应该写代码来更新腾讯云 oss
-        pass
+        modified_files, self.file_dict = self.get_modified_files()
+        self.tencent_tool.upload_files(modified_files)  
+        modified_files, self.file_dict = self.del_files()
+        self.tencent_tool.delete_files(modified_files)
+        return self.file_dict
 
     def update_cdn(self):
         # 这里应该写代码来更新腾讯云 cdn
@@ -88,7 +102,6 @@ class AutoCommit:
     def stop_server(self):
         # 这里应该写代码来停止本地服务
         self.hugo_cmd.kill()
-        del self.hugo_cmd
         return None
 
     def deploy(self):

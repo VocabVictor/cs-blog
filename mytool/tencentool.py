@@ -17,9 +17,10 @@ from tencentcloud.common import credential
 from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.cdn.v20180606 import cdn_client, models
-
+from os.path import relpath
+from concurrent.futures import ThreadPoolExecutor, as_completed
 class TencentTool:
-    def __init__(self, region, bucket, secret_id, secret_key,cdn_domain=None):
+    def __init__(self, blog_path,region, bucket, secret_id, secret_key,cdn_domain=None):
 
         # 配置cdn
         # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密
@@ -44,6 +45,7 @@ class TencentTool:
         self.client = CosS3Client(self.config)
 
         # 保存参数
+        self.blog_path = blog_path
         self.region = region
         self.bucket = bucket
         self.secret_id = secret_id
@@ -51,7 +53,38 @@ class TencentTool:
         self.cdn_domain = cdn_domain
         self.max_file_size = 1024 * 1024 * 500
 
-    async def upload_file(self, key, file_path):
+    def upload_files(self, file_list):
+        with ThreadPoolExecutor() as executor:
+            # 提交所有任务
+            futures = []
+            for file_path in file_list:
+                key = relpath(file_path, self.blog_path).replace('\\', '/')
+                future = executor.submit(self.upload_file, key, file_path)
+                futures.append(future)
+            # 等待所有任务完成
+            for future in as_completed(futures):
+                print(future.result())
+
+    def delete_files(self,file_list):
+        with ThreadPoolExecutor() as executor:
+            # 提交所有任务
+            futures = []
+            for file_path in file_list:
+                key = relpath(file_path, self.blog_path).replace('\\', '/')
+                future = executor.submit(self.del_file, key)
+                futures.append(future)
+            # 等待所有任务完成
+            for future in as_completed(futures):
+                print(future.result())        
+
+    def del_file(self,key):
+        response = self.client.delete_object(
+            Bucket=self.bucket,
+            Key=key,
+        )
+        return response
+
+    def upload_file(self,key,file_path):
         # 检查文件大小
         file_size = getsize(file_path)
         if file_size < self.max_file_size:
@@ -63,10 +96,10 @@ class TencentTool:
             )
         else:
             # 否则，启动分片上传
-            response = await self.upload_file_in_parts(key, file_path)
+            response = self.upload_file_in_parts(key, file_path)
         return response
 
-    async def upload_file_in_parts(self, key, file_path):
+    def upload_file_in_parts(self, key, file_path):
         # 初始化分片上传任务
         response = self.client.create_multipart_upload(
             Bucket=self.bucket,
@@ -85,8 +118,8 @@ class TencentTool:
                 if not chunk:
                     break
                 # 上传分片
-                async with ClientSession:
-                    response = await self.client.upload_part(
+                with ClientSession:
+                    response = self.client.upload_part(
                         Bucket=self.bucket,
                         Key=key,
                         Body=chunk,
