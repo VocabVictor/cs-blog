@@ -70,8 +70,6 @@ class GUI(tk.Tk):
         self.textbox_status = tk.Text(self.textbox_frame,bg='black', fg='green')
         self.textbox_time = tk.Listbox(self.textbox_frame, bg='black', fg='green')
 
-        if self.hugo_info:
-            self.log("hugo 服务已经启动")
         # 以下是三个按钮，用于全选，全不选，反选，上传到腾讯云oss,启动、停止、保存配置,提交到github和一键部署
         self.button_frame = tk.Frame(self)
         self.button_select_all = tk.Button(
@@ -83,13 +81,13 @@ class GUI(tk.Tk):
         self.button_upload = tk.Button(
             self.button_frame, text='上传到腾讯云oss', command=self.auto_commit.update_oss)
         self.button_start = tk.Button(
-            self.button_frame, text='启动', command=self.auto_commit.start_server)
+            self.button_frame, text='启动', command=self.start_server)
         self.button_stop = tk.Button(
-            self.button_frame, text='停止', command=self.auto_commit.stop_server)
+            self.button_frame, text='停止', command=self.stop_server)
         self.button_save = tk.Button(
             self.button_frame, text='保存配置', command=self.save_config)
         self.button_github = tk.Button(
-            self.button_frame, text='提交到github和gitee', command=self.auto_commit.git_commit)
+            self.button_frame, text='提交到github和gitee', command=self.git_commit)
         self.button_deploy = tk.Button(
             self.button_frame, text='一键部署', command=self.auto_commit.deploy)
 
@@ -130,6 +128,8 @@ class GUI(tk.Tk):
 
         self.grid()
 
+        if self.hugo_info:
+            self.log('本地hugo服务已经启动')
         self.log('初始化完成')
 
     def log(self, msg):
@@ -195,8 +195,24 @@ class GUI(tk.Tk):
 
     def start_server(self):
         # 启动服务
-        self.auto_commit.start_server()
-        
+        if self.hugo_info:
+            self.log('服务已经启动')
+        else:
+            self.hugo_info = self.auto_commit.start_server()
+            self.log('服务启动完成')
+    
+    def git_commit(self):
+        # git 提交
+        self.auto_commit.git_commit()
+        self.log('git commit 完成')
+
+    def stop_server(self):
+        # 停止服务
+        if self.hugo_info:
+            self.hugo_info = self.auto_commit.stop_server()
+            self.log('服务停止完成')
+        else:
+            self.log('服务未启动')
 
     def select_all(self):
         # 全选

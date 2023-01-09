@@ -22,6 +22,7 @@
 from tencentool import TencentTool
 from os import chdir
 from subprocess import Popen, PIPE
+from os import system
 class AutoCommit:
     def __init__(self):
         self.modified_files = []
@@ -35,7 +36,7 @@ class AutoCommit:
         if self.hugo:
             info = self.start_server()
         else:
-            info = '未启动本地服务'
+            info = None
         self.tencent_tool = TencentTool(
             secret_id = self.secret_id,
             secret_key = self.secret_key,
@@ -63,9 +64,9 @@ class AutoCommit:
 
     def git_commit(self):
         # 这里应该写代码来提交到 github 和 gitee
-        Popen(["git", "add","*"], stdout=PIPE, stderr=PIPE)
-        Popen(["git", "add","*"], stdout=PIPE, stderr=PIPE)
-        Popen(["git", "push","origin" "main"], stdout=PIPE, stderr=PIPE)
+        system('git add .')
+        system('git commit -m "update"')
+        system('git push origin main')
 
     def update_oss(self):
         # 这里应该写代码来更新腾讯云 oss
@@ -87,7 +88,8 @@ class AutoCommit:
     def stop_server(self):
         # 这里应该写代码来停止本地服务
         self.hugo_cmd.kill()
-        return '已停止本地服务'
+        del self.hugo_cmd
+        return None
 
     def deploy(self):
         # 这里应该写代码来部署到服务器
