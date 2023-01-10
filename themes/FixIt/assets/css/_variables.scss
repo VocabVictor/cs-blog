@@ -1,7 +1,7 @@
 // ==============================
 // Variables
 // ==============================
-
+$theme-color: #39C5BB !default; // 潮蓝
 // ========== Global ========== //
 // Prefix for :root CSS variables.
 $prefix: fi- !default;
@@ -71,7 +71,7 @@ $header-title-font-family: $global-font-family !default;
 $header-title-font-size: 1.5rem !default;
 
 // Color of the active menu item
-$menu-active-color: #161209 !default;
+$menu-active-color: #fff !default;
 $menu-active-color-dark: #fff !default;
 
 // Color of the search background

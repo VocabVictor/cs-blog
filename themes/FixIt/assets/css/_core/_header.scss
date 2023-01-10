@@ -50,35 +50,34 @@ header {
   }
 }
 
+
+.myheader{
+  .menu-item{
+    position: relative;
+    &:hover{
+      &::before{
+        width: 100%;
+      }
+    }
+  
+    &::before{
+      position:absolute;
+      bottom: 14px;
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: $theme-color;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+}
+
 .menu {
   margin: 0;
   padding: 0;
 
-  >.menu-item{
-    >.menu-link:hover{
-      &::before{
-        width: 100px;
-      }
-    }
-
-    >.menu-link::before{
-      position:absolute;
-      bottom: 0;
-      content: "1";
-      width: 0;
-      height: 2px;
-      background-color: green;
-      transition: width 0.3s ease-in-out;
-    }
-  }
-
   .menu-item {
     list-style: none;
-
-    .menu-link{
-      position: relative;
-      overflow-x: hidden;
-    }
 
     & .dropdown-icon {
       margin-left: 0.25rem;
@@ -217,7 +216,6 @@ header {
   }
 
   nav {
-    overflow: hidden;
     white-space: nowrap;
   }
 
@@ -250,7 +248,7 @@ header {
       }
 
       .menu-item {
-        padding: 0 0.5rem;
+        margin: 0 0.5rem;
 
         &.delimiter {
           width: 0;

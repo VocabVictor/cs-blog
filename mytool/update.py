@@ -21,7 +21,7 @@
 '''
 from tencentool import TencentTool
 from os import chdir
-from subprocess import Popen, PIPE
+from subprocess import Popen
 from os import system,walk
 from os.path import getmtime,exists
 class AutoCommit:
@@ -110,7 +110,7 @@ class AutoCommit:
 
     def start_server(self):
         # 这里应该写代码来启动本地服务
-        self.hugo_cmd = Popen(["hugo", "server"], stdout=PIPE, stderr=PIPE)
+        self.hugo_cmd = Popen(["hugo", "server"])
         return self.hugo_cmd
 
     def stop_server(self):

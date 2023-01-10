@@ -15,6 +15,8 @@ theme = "FixIt"
   # 背景图片,支持本地资源和网络资源
   lightimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
   darkimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
+  # 日夜切换的动画是否开启
+  transition = false
   #  FixIt 主题版本
   version = "0.2.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
   # 网站描述
@@ -854,6 +856,27 @@ theme = "FixIt"
 
 [menu]
   [[menu.main]]
+    identifier = "index"
+    # 你可以在名称（允许 HTML 格式）之前添加其他信息，例如图标
+    pre = ""
+    # 你可以在名称（允许 HTML 格式）之后添加其他信息，例如图标
+    post = ""
+    name = "首页"
+    url = "/index/"
+    # 当你将鼠标悬停在此菜单链接上时，将显示的标题
+    title = ""
+    weight = 1
+    # 向菜单项添加用户定义的内容
+    [menu.main.params]
+      # 添加 CSS 类到菜单项
+      class = ""
+      # 是否为草稿菜单，类似草稿页面
+      draft = false
+      # 添加 fontawesome 图标到菜单项
+      icon = "fa-solid fa-archive"
+      # 设置菜单项类型，可选值：["mobile", "desktop"]
+      type = ""
+  [[menu.main]]
     identifier = "posts"
     # 你可以在名称（允许 HTML 格式）之前添加其他信息，例如图标
     pre = ""
@@ -863,7 +886,7 @@ theme = "FixIt"
     url = "/posts/"
     # 当你将鼠标悬停在此菜单链接上时，将显示的标题
     title = ""
-    weight = 1
+    weight = 2
     # 向菜单项添加用户定义的内容
     [menu.main.params]
       # 添加 CSS 类到菜单项
@@ -881,7 +904,7 @@ theme = "FixIt"
     name = "分类"
     url = "/categories/"
     title = ""
-    weight = 2
+    weight = 3
     [menu.main.params]
       icon = "fa-solid fa-th"
   [[menu.main]]
@@ -891,7 +914,7 @@ theme = "FixIt"
     name = "标签"
     url = "/tags/"
     title = ""
-    weight = 3
+    weight = 4
     [menu.main.params]
       icon = "fa-solid fa-tags"
 
@@ -938,13 +961,21 @@ defaultContentLanguage = "zh-cn"
     # 是否包括中日韩文字
     hasCJKLanguage = true
     [[languages.zh-cn.menu.main]]
+      identifier = "index"
+      pre = ""
+      post = ""
+      name = "首页"
+      url = ""
+      title = ""
+      weight = 1
+    [[languages.zh-cn.menu.main]]
       identifier = "posts"
       pre = ""
       post = ""
       name = "文章"
       url = "/posts/"
       title = ""
-      weight = 1
+      weight = 2
     [[languages.zh-cn.menu.main]]
       identifier = "tags"
       pre = ""
@@ -952,7 +983,7 @@ defaultContentLanguage = "zh-cn"
       name = "标签"
       url = "/tags/"
       title = ""
-      weight = 2
+      weight = 3
     [[languages.zh-cn.menu.main]]
       identifier = "categories"
       pre = ""
@@ -960,7 +991,7 @@ defaultContentLanguage = "zh-cn"
       name = "分类"
       url = "/categories/"
       title = ""
-      weight = 3
+      weight = 4
 
   [languages.fr]
     weight = 3
