@@ -58,7 +58,7 @@
             {{- with .Post }} {{ . | safeHTML -}}{{- end -}}
           </a>
           {{- if .HasChildren -}}
-          {{ dict "Class" "dropdown-icon fa-solid fa-chevron-down" | partial "plugin/icon.html" }}
+          {{ dict "Class" "hasChildren dropdown-icon fa-solid fa-chevron-down" | partial "plugin/icon.html" }}
           <ul class="sub-menu">
             {{ range .Children }}
             {{- $url := .URL | relLangURL -}}

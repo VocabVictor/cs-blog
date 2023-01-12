@@ -898,6 +898,7 @@ theme = "FixIt"
       # 设置菜单项类型，可选值：["mobile", "desktop"]
       type = ""
   [[menu.main]]
+    parent = "posts"
     identifier = "categories"
     pre = ""
     post = ""
@@ -973,10 +974,47 @@ defaultContentLanguage = "zh-cn"
       pre = ""
       post = ""
       name = "文章"
-      url = "/posts/"
       title = ""
       weight = 2
     [[languages.zh-cn.menu.main]]
+      identifier = "play"
+      pre = ""
+      post = ""
+      name = "休闲"
+      title = ""
+      weight = 3
+    [[languages.zh-cn.menu.main]]
+      identifier = "treasure"
+      pre = ""
+      post = ""
+      name = "八宝箱"
+      title = ""
+      weight = 4
+    [[languages.zh-cn.menu.main]]
+      identifier = "urls"
+      pre = ""
+      post = ""
+      name = "网站"
+      title = ""
+      weight = 5
+    [[languages.zh-cn.menu.main]]
+      identifier = "me"
+      pre = ""
+      post = ""
+      name = "个人"
+      title = ""
+      weight = 6
+    [[languages.zh-cn.menu.main]]
+      parent = "posts"
+      identifier = "summary"
+      pre = ""
+      post = ""
+      name = "归档"
+      url = "/posts/"
+      title = ""
+      weight = 3
+    [[languages.zh-cn.menu.main]]
+      parent = "posts"
       identifier = "tags"
       pre = ""
       post = ""
@@ -985,13 +1023,14 @@ defaultContentLanguage = "zh-cn"
       title = ""
       weight = 3
     [[languages.zh-cn.menu.main]]
+      parent = "posts"
       identifier = "categories"
       pre = ""
       post = ""
       name = "分类"
       url = "/categories/"
       title = ""
-      weight = 4
+      weight = 3
 
   [languages.fr]
     weight = 3
