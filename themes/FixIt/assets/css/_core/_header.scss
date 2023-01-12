@@ -245,6 +245,11 @@ header {
       flex-wrap: nowrap;
       float: right;
 
+
+      >.menu-item{
+        margin: 0 0.5rem;
+      }
+
       >.menu-item:hover {
 
         & .sub-menu {
@@ -253,7 +258,6 @@ header {
       }
 
       .menu-item {
-        margin: 0 0.5rem;
 
         &.delimiter {
           width: 0;
@@ -280,13 +284,12 @@ header {
       .sub-menu {
         margin: 0;
         position:absolute;
-        padding: 0.25rem 0;
+        padding: 0;
         left: 50%;
         transform: translateX(-50%);
         display: none;
         top: calc(#{$header-height} - 0.5rem);
         border-radius: $global-border-radius;
-        border: 1px solid $global-border-color;
         background-color: $header-background-color;
         @include transition(box-shadow 0.3s ease);
 
@@ -305,7 +308,21 @@ header {
           text-overflow: ellipsis;
           overflow-x: hidden;
           display: inline; 
+          padding: 0.5rem;
+          .menu-link,.menu-link:hover{
+            color: $submenu-font-color;
+          }
+          &:hover {
+            background-color: $theme-color;
+          }
         }
+        .menu-item:first-child{
+          border-radius: $global-border-radius 0 0 $global-border-radius;
+        }
+        .menu-item:last-child{
+          border-radius: 0 $global-border-radius $global-border-radius 0;
+        }
+
       }
     }
   }
