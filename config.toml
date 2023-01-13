@@ -580,7 +580,6 @@ theme = "FixIt"
         # 或者
         jquery = "https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"
         universescript = "js/universe.js"
-        lightscript = "js/light.js"
     #  页面 SEO 配置
     [params.page.seo]
       # 图片 URL

@@ -1,10 +1,47 @@
 .post-footer {
-  margin: 2rem 0;
+  margin: 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 14px;
+
+  .author{
+    display: flex;
+    align-items: center;
+  }
+
+  a{
+    color: $submenu-font-color !important;
+  }
+
+  .envelope {
+    position: relative;
+    transform: rotate(45deg);
+  }
+  
+  .envelope::before, .envelope::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    background: #000;
+  }
+  
+  .envelope::before {
+    top: -5px;
+    left: 0;
+  }
+  
+  .envelope::after {
+    top: -5px;
+    right: 0;
+  }  
 
   &:has(~.post-reward) {
     margin-bottom: 0;
   }
-
   .post-info {
     border-bottom: 1px solid $global-border-color;
     padding: 1rem 0 0.3rem;

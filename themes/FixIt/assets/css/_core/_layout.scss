@@ -14,10 +14,10 @@
 
     &.container {
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-start;
       padding: 0 1rem;
-
+      flex-direction: column;
       &:has(.home:not(.posts)) {
         align-items: center;
       }
@@ -30,7 +30,20 @@
   }
 }
 
-
+.tips{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80vw;
+  .summary{
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: $global-border-radius;
+    background-color: rgba($color:$global-background-color , $alpha: 0.9);
+    [data-theme='dark'] & {
+      background-color: rgba($color:$global-background-color-dark , $alpha: 0.8);
+    }
+  }
+}
 
 @import "_core/header";
 @import "_core/footer";
