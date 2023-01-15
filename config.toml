@@ -1044,7 +1044,7 @@ defaultContentLanguage = "zh-cn"
       pre = ""
       post = ""
       name = "腾讯云"
-      url = "http://blog.hzxwhzxw.asia/"
+      url = "https://blog.hzxwhzxw.asia/"
       title = ""
       weight = 1
     [[languages.zh-cn.menu.main]]
@@ -1056,6 +1056,15 @@ defaultContentLanguage = "zh-cn"
       url = "https://vocabvictor.github.io/cs-blog/"
       title = ""
       weight = 2
+    [[languages.zh-cn.menu.main]]
+      parent = "line"
+      identifier = "Vercel"
+      pre = ""
+      post = ""
+      name = "Vercel"
+      url = "https://cs-blog-beta.vercel.app/"
+      title = ""
+      weight = 3
   [languages.fr]
     weight = 3
     title = "Mon nouveau site Hugo FixIt"
