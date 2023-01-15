@@ -140,7 +140,7 @@ class GUI(tk.Tk):
         # 以下是文章的配置输入框
         self.article_frame = tk.Frame(self)
         self.article_path = "content/posts/" + self.tkvar['article_title'].get() + ".md"
-        self.markdown = Markdown(self.config["blog_path"],self.article_path)
+        self.markdown = Markdown(self.config["blog_path"],self.article_path,self.config["cdn_domain"])
         self.entry_article_title = tk.Entry(
             self.article_frame, textvariable=self.tkvar['article_title'])
         self.entry_article_tags = tk.Entry(

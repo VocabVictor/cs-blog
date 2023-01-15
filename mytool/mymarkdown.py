@@ -20,15 +20,19 @@ from os import listdir
 from random import choice
 
 class Markdown:
-    def __init__(self, blog_path = None,filename = None):
+    def __init__(self, blog_path = None,filename = None,cdn = None):
         self.filename = filename
         self.blog_path = blog_path
+        self.cdn = cdn
         self.front_matter = {}
         self.content = ''
         self.featured_image_dir = 'static/featured-image'
         self.featured_images = []
         self.image_types = ('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg', '.webp')
-        self.featured_image_prefix = '/featured-image/'
+        if cdn is None:
+            self.featured_image_prefix = '/featured-image/'
+        else:
+            self.featured_image_prefix = cdn + '/featured-image/'
         self.init_featured_image()
         self.default_front_matter = {
             'math': {

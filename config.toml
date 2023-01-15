@@ -1004,6 +1004,14 @@ defaultContentLanguage = "zh-cn"
       title = ""
       weight = 6
     [[languages.zh-cn.menu.main]]
+      identifier = "line"
+      pre = ""
+      post = ""
+      name = "线路"
+      title = ""
+      url = "https://cs-blog-beta.vercel.app/"
+      weight = 7
+    [[languages.zh-cn.menu.main]]
       parent = "posts"
       identifier = "summary"
       pre = ""
@@ -1030,7 +1038,24 @@ defaultContentLanguage = "zh-cn"
       url = "/categories/"
       title = ""
       weight = 3
-
+    [[languages.zh-cn.menu.main]]
+      parent = "line"
+      identifier = "tecncent"
+      pre = ""
+      post = ""
+      name = "腾讯云"
+      url = "http://blog.hzxwhzxw.asia/"
+      title = ""
+      weight = 1
+    [[languages.zh-cn.menu.main]]
+      parent = "line"
+      identifier = "Github"
+      pre = ""
+      post = ""
+      name = "Github"
+      url = "https://vocabvictor.github.io/cs-blog/"
+      title = ""
+      weight = 2
   [languages.fr]
     weight = 3
     title = "Mon nouveau site Hugo FixIt"
