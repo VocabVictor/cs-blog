@@ -3,6 +3,7 @@
 // ==============================
 $theme-color: #39C5BB !default; // 潮蓝
 $submenu-font-color: #4c4948 !default; // 深灰
+$text-highlight-color: #1f2d3d !default; 
 // ========== Global ========== //
 // Prefix for :root CSS variables.
 $prefix: fi- !default;
@@ -10,11 +11,13 @@ $prefix: fi- !default;
 // Font and Line Height
 $global-font-family: HYTMR !default;
 $global-font-size: 17px !default;
+$text-font-size: 19px !default;
 $global-font-weight: 400 !default;
 $global-line-height: 1.5rem !default;
 
 // Radius of the border
 $global-border-radius: 5px !default;
+$tip-border-radius: 20px !default;
 
 // Color of the background
 $global-background-color: #ffffff !default;

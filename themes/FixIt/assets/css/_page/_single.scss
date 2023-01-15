@@ -8,7 +8,12 @@
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 140%;
-  
+    text-align: center !important;
+    >a{
+      color: $text-highlight-color;
+      font-size: $text-font-size;
+    }
+
     .icon-repost {
       color: var(--#{$prefix}success);
       display: inline-block;

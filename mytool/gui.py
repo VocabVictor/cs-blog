@@ -25,6 +25,7 @@
 import tkinter as tk
 from myjson import Config
 from update import AutoCommit
+from mymarkdown import Markdown
 
 from time import sleep
 class GUI(tk.Tk):
@@ -36,8 +37,12 @@ class GUI(tk.Tk):
 
         # 核心工具类
         self.auto_commit = AutoCommit()
+
+        # 配置类
         self.config = None
         self.tkvar = {}
+
+        self.auto_commit.clear()
 
         self.load_config()
         self.init_tkvar()
@@ -65,8 +70,8 @@ class GUI(tk.Tk):
         # 以下四个列表组件的数据都是从 auto_commit 中获取的
         # 由于 auto_commit 是一个线程，所以需要使用 queue 来传递数据
         self.textbox_frame = tk.Frame(self, bg='red')
-        self.textbox_log = tk.Text(self.textbox_frame, width=50,height=10,bg='black', fg='green')
-        self.textbox_files = tk.Text(self.textbox_frame, width=50,height=10,bg='black', fg='green')
+        self.textbox_log = tk.Text(self.textbox_frame, width=60,height=10,bg='black', fg='green')
+        self.textbox_files = tk.Text(self.textbox_frame, width=60,height=10,bg='black', fg='green')
         self.textbox_status = tk.Text(self.textbox_frame,bg='black', fg='green')
         self.textbox_time = tk.Listbox(self.textbox_frame, bg='black', fg='green')
 
@@ -92,6 +97,10 @@ class GUI(tk.Tk):
             self.button_frame, text='提交到github和gitee', command=self.git_commit)
         self.button_deploy = tk.Button(
             self.button_frame, text='一键部署', command=self.deploy)
+        self.button_clear = tk.Button(
+            self.button_frame, text='清空日志', command=self.clear_log)
+        self.button_new = tk.Button(
+            self.button_frame, text='新建文章', command=self.new_post)
 
         # 以下是各种输入框，用于输入各种配置
         self.entry_frame = tk.Frame(self)
@@ -128,6 +137,43 @@ class GUI(tk.Tk):
         self.label_region = tk.Label(self.entry_frame, text='oss region')
         self.label_domain = tk.Label(self.entry_frame, text='cdn domain')
 
+        # 以下是文章的配置输入框
+        self.article_frame = tk.Frame(self)
+        self.article_path = "content/posts/" + self.tkvar['article_title'].get() + ".md"
+        self.markdown = Markdown(self.config["blog_path"],self.article_path)
+        self.entry_article_title = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_title'])
+        self.entry_article_tags = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_tags'])
+        self.entry_article_categories = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_categories'])
+        self.entry_article_summary = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_summary'])
+        self.entry_article_draft = tk.Checkbutton(
+            self.article_frame, variable=self.tkvar['article_draft'])
+        self.entry_article_keywords = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_keywords'])
+        self.entry_article_description = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_description'])
+        self.entry_article_author = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_author'])
+        self.entry_article_weight = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_weight'])
+        self.entry_article_date = tk.Entry(
+            self.article_frame, textvariable=self.tkvar['article_date'])
+
+        # 以下是文章的配置标签
+        self.label_article_title = tk.Label(self.article_frame, text='文章标题')
+        self.label_article_tags = tk.Label(self.article_frame, text='文章标签')
+        self.label_article_categories = tk.Label(self.article_frame, text='文章分类')
+        self.label_article_summary = tk.Label(self.article_frame, text='文章摘要')
+        self.label_article_draft = tk.Label(self.article_frame, text='文章是否草稿')
+        self.label_article_keywords = tk.Label(self.article_frame, text='文章关键字')
+        self.label_article_description = tk.Label(self.article_frame, text='文章描述')
+        self.label_article_author = tk.Label(self.article_frame, text='文章作者')
+        self.label_article_weight = tk.Label(self.article_frame, text='文章权重')
+        self.label_article_date = tk.Label(self.article_frame, text='文章日期')
+
         self.grid()
 
         if self.hugo_info:
@@ -154,9 +200,9 @@ class GUI(tk.Tk):
 
 
         # 列举控件在中间纵向排列，每个控件占用 4 列
-        self.textbox_frame.grid(row=1, column=0, sticky='w', columnspan=4)
-        self.textbox_files.grid(row=0, column=0, sticky='w', columnspan=2)
-        self.textbox_log.grid(row=0, column=2, sticky='w', columnspan=2)
+        self.textbox_frame.grid(row=1, column=0, sticky='w', columnspan=16)
+        self.textbox_files.grid(row=0, column=0, sticky='w', columnspan=8)
+        self.textbox_log.grid(row=0, column=8, sticky='w', columnspan=8)
         # self.textbox_status.grid(row=5, column=0)
         # self.textbox_time.grid(row=8, column=0)
 
@@ -183,8 +229,27 @@ class GUI(tk.Tk):
         self.label_domain.grid(row=4, column=4, sticky='w', columnspan=2)
         self.entry_domain.grid(row=4, column=6, sticky='e', columnspan=2)
 
+        # 文章配置输入框，一行8列
+        self.article_frame.grid(row=2, column=0, sticky='w', columnspan=16)
+        self.label_article_title.grid(row=0, column=0, sticky='w', columnspan=2)
+        self.entry_article_title.grid(row=0, column=2, sticky='e', columnspan=2)
+        self.label_article_tags.grid(row=0, column=4, sticky='w', columnspan=2)
+        self.entry_article_tags.grid(row=0, column=6, sticky='e', columnspan=2)
+        self.label_article_categories.grid(row=0, column=8, sticky='w', columnspan=2)
+        self.entry_article_categories.grid(row=0, column=10, sticky='e', columnspan=2)
+        self.label_article_author.grid(row=0, column=12, sticky='w', columnspan=2)
+        self.entry_article_author.grid(row=0, column=14, sticky='e', columnspan=2)
+        self.label_article_summary.grid(row=1, column=0, sticky='w', columnspan=2)
+        self.entry_article_summary.grid(row=1, column=2, sticky='e', columnspan=2)
+        self.label_article_draft.grid(row=1, column=4, sticky='w', columnspan=2)
+        self.entry_article_draft.grid(row=1, column=6, sticky='e', columnspan=2)
+        self.label_article_weight.grid(row=1, column=8, sticky='w', columnspan=2)
+        self.entry_article_weight.grid(row=1, column=10, sticky='e', columnspan=2)
+        self.label_article_date.grid(row=1, column=12, sticky='w', columnspan=2)
+        self.entry_article_date.grid(row=1, column=14, sticky='e', columnspan=2)
+
         # 按钮在右下角纵向排列，每个按钮占用 2 列
-        self.button_frame.grid(row=2, column=0, sticky='e', columnspan=14)
+        self.button_frame.grid(row=3, column=0, sticky='e', columnspan=22)
         self.button_select_all.grid(row=0, column=0, sticky='e', columnspan=2)
         self.button_select_none.grid(row=0, column=2, sticky='e', columnspan=2)
         self.button_select_invert.grid(row=0, column=4, sticky='e', columnspan=2)
@@ -194,6 +259,28 @@ class GUI(tk.Tk):
         self.button_save.grid(row=0, column=12, sticky='e', columnspan=2)
         self.button_github.grid(row=0, column=14, sticky='e', columnspan=2)
         self.button_deploy.grid(row=0, column=16, sticky='e', columnspan=2)
+        self.button_clear.grid(row=0, column=18, sticky='e', columnspan=2)
+        self.button_new.grid(row=0, column=20, sticky='e', columnspan=2)
+
+    def new_post(self):
+        # 新建文章
+        self.log('新建文章')
+        self.auto_commit.new_post(self.tkvar["article_title"].get())
+        self.markdown.set_path(self.article_path)
+        data = {}
+        # 字符串按逗号分割成列表
+        data['tags'] = list(self.tkvar["article_tags"].get().split(','))
+        data['categories'] = list(self.tkvar["article_categories"].get().split(','))
+        data['author'] = self.tkvar["article_author"].get()
+        data['summary'] = self.tkvar["article_summary"].get()
+        data['draft'] = self.tkvar["article_draft"].get()
+        data['weight'] = self.tkvar["article_weight"].get()
+        self.markdown.write(data = data)
+
+    def clear_log(self):
+        # 清空日志
+        self.textbox_log.delete(1.0, tk.END)
+        self.auto_commit.clear()
 
     def start_server(self):
         # 启动服务
@@ -274,7 +361,7 @@ class GUI(tk.Tk):
         self.tkvar['tencentcloud_cdn'] = tk.BooleanVar(
             value=self.config['tencentcloud_cdn'])
 
-        # 以下是Entry的默认值
+        # 以下是全局配置的默认值
         self.tkvar['blog_path'] = tk.StringVar(value=self.config['blog_path'])
         self.tkvar['secret_id'] = tk.StringVar(value=self.config['secret_id'])
         self.tkvar['secret_key'] = tk.StringVar(value=self.config['secret_key'])
@@ -290,6 +377,18 @@ class GUI(tk.Tk):
         self.tkvar['oss_region'] = tk.StringVar(value=self.config['oss_region'])
         self.tkvar['cdn_domain'] = tk.StringVar(value=self.config['cdn_domain'])
         self.tkvar['log'] = tk.StringVar(value=self.config['log'])
+
+        # 以下是文章配置的默认值
+        self.tkvar['article_title'] = tk.StringVar(value=self.config['article_title'])
+        self.tkvar['article_tags'] = tk.StringVar(value=self.config['article_tags'])
+        self.tkvar['article_categories'] = tk.StringVar(value=self.config['article_categories'])
+        self.tkvar['article_date'] = tk.StringVar(value=self.config['article_date'])
+        self.tkvar['article_draft'] = tk.BooleanVar(value=self.config['article_draft'])
+        self.tkvar['article_summary'] = tk.StringVar(value=self.config['article_summary'])
+        self.tkvar['article_weight'] = tk.StringVar(value=self.config['article_weight'])
+        self.tkvar['article_keywords'] = tk.StringVar(value=self.config['article_keywords'])
+        self.tkvar['article_description'] = tk.StringVar(value=self.config['article_description'])
+        self.tkvar['article_author'] = tk.StringVar(value=self.config['article_author'])
 
     def load_config(self):
         try:

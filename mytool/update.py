@@ -24,9 +24,20 @@ from os import chdir
 from subprocess import Popen
 from os import system,walk
 from os.path import getmtime,exists
+from datetime import datetime
+
 class AutoCommit:
     def __init__(self):
         self.modified_files = []
+
+    def clear(self):
+        system('cls')
+
+    def new_post(self,title):
+        if not title:
+            now = datetime.now()
+            title = "新建文章" + now.strftime("%Y-%m-%d %H:%M:%S")
+        system('hugo new posts/' + title + '.md')
 
     def set(self,dict):
         self.__dict__.update(dict)

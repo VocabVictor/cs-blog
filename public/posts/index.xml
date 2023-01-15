@@ -4,13 +4,61 @@
     <link>https://cs-blog-beta.vercel.app/posts/</link>
     <description>所有文章 | 山中书半</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>w93854@outlook.com (VocabVictor)</managingEditor>
-      <webMaster>w93854@outlook.com (VocabVictor)</webMaster><lastBuildDate>Sat, 24 Dec 2022 01:23:57 &#43;0800</lastBuildDate><atom:link href="https://cs-blog-beta.vercel.app/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>毕业设计题目</title>
-  <link>https://cs-blog-beta.vercel.app/first-blog/</link>
-  <pubDate>Sat, 24 Dec 2022 01:23:57 &#43;0800</pubDate>
-  <author>666</author>
-  <guid>https://cs-blog-beta.vercel.app/first-blog/</guid>
-  <description><![CDATA[NLP 对话系统 抽取式对答任务迁移——自然语言与SQL的互译方法研究 结合中文常识图谱的多轮可控对话研究 基于DQN（深度强化学习）的开放域客服对话研]]></description>
+      <webMaster>w93854@outlook.com (VocabVictor)</webMaster><lastBuildDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</lastBuildDate><atom:link href="https://cs-blog-beta.vercel.app/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-2/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-2/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-3/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-3/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-4/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-4/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-5/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-5/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-6/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC-6/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%89%AF%E6%9C%AC/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>毕业设计</title>
+  <link>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</link>
+  <pubDate>Sun, 15 Jan 2023 16:54:36 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
+  <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

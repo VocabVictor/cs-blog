@@ -36,11 +36,10 @@
   width: 80vw;
   .summary{
     margin: 1rem;
-    padding: 0.5rem;
-    border-radius: $global-border-radius;
-    background-color: rgba($color:$global-background-color , $alpha: 0.9);
-    [data-theme='dark'] & {
-      background-color: rgba($color:$global-background-color-dark , $alpha: 0.8);
+    border-radius: $tip-border-radius;
+    background-color: white;
+    [data-themes="dark"] & {
+      background-color: black;
     }
   }
 }

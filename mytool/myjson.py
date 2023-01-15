@@ -43,9 +43,8 @@ class Config:
 
     def __getitem__(self, key):
         if key not in self.data:
-            return None
-        else:
-            return self.data[key]
+            self.data[key] = None
+        return self.data[key]
 
     def __setitem__(self, key, value):
         self.data[key] = value

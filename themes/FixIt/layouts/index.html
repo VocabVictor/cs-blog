@@ -38,7 +38,7 @@
   {{- range $pages.Pages -}}
   {{- .Render "summary" -}}
   {{- end -}}
-  {{- partial "paginator.html" . -}}
-  {{- end -}}
 </div>
+{{- partial "paginator.html" . -}}
+{{- end -}}
 {{- end -}}

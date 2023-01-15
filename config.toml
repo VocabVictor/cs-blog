@@ -22,7 +22,7 @@ theme = "FixIt"
   # 网站描述
   description = "Hope you have a nice day!🍭🍭"
   # 网站关键词
-  keywords = ["Hugo", "FixIt"]
+  keywords = ["ML", "NLP","深度学习推理框架","合肥工业大学"]
   # 网站默认主题样式 ["light", "dark", "auto"]
   defaultTheme = "auto"
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
@@ -163,14 +163,14 @@ theme = "FixIt"
     #  最近更新文章设置
     [params.section.recentlyUpdated]
       enable = true
-      rss = false
+      rss = true
       days = 30
       maxCount = 10
 
   #  List（目录或标签）页面配置
   [params.list]
     # list 页面每页显示文章数量
-    paginate = 20
+    paginate = 12
     # 日期格式（月和日）
     dateFormat = "2022-12-23"
     # RSS 文章数目
@@ -181,7 +181,7 @@ theme = "FixIt"
     enable = true
     min = 14 # 最小字体大小，单位：px
     max = 32 # 最大字体大小，单位：px
-    peakCount = 10 # 每个标签的最大文章数
+    peakCount = 100 # 每个标签的最大文章数
     orderby = "name" # 标签排序方式，可选值：["name", "count"]
 
   # 主页配置
