@@ -10,6 +10,8 @@ hasCJKLanguage = true
 # uglyURLs = true
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = "FixIt"
+# 自动摘要最大长度
+summaryLength = 20
 
 [params]
   # 背景图片,支持本地资源和网络资源
@@ -17,6 +19,11 @@ theme = "FixIt"
   darkimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
   # 日夜切换的动画是否开启
   transition = false
+  # 摘要最大长度,用来限制页面级别的手写摘要和描述的最大长度
+  summaryLength = 20
+  # 摘要的行数
+  summaryLines = 2
+  # 摘要最大长度
   #  FixIt 主题版本
   version = "0.2.X" # 例如："0.2.X", "0.2.15", "v0.2.15" 等
   # 网站描述
@@ -1009,7 +1016,6 @@ defaultContentLanguage = "zh-cn"
       post = ""
       name = "线路"
       title = ""
-      url = "https://cs-blog-beta.vercel.app/"
       weight = 7
     [[languages.zh-cn.menu.main]]
       parent = "posts"

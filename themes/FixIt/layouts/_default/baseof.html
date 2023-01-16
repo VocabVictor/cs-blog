@@ -1,56 +1,82 @@
 {{- partial "init/index.html" . -}}
-{{/*  我现在想要绑定一个在配置文件中名叫bg的变量，该变量有可能是网络路径的图片，有可能是本地路径  */}}
+{{/* 我现在想要绑定一个在配置文件中名叫bg的变量，该变量有可能是网络路径的图片，有可能是本地路径 */}}
 {{- $lightimage := .Site.Params.lightimage -}}
 {{- $darkimage := .Site.Params.darkimage -}}
+{{- $posts := .Site.Params.home.posts -}}
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.LanguageCode }}">
-  <head>
-    {{ if (eq .Kind "home") | and (ne .Site.Params.disableThemeInject true) }}
-      <meta name="theme" content='FixIt {{ .Scratch.Get "version" }}'>
-    {{ end }}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <meta name="robots" content="noodp" />
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    {{- partial "head/meta.html" . -}}
-    {{- partial "head/link.html" . -}}
-    {{- partial "head/seo.html" . -}}
-  </head>
-  <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
-    {{- /* Check theme isDark before body rendering */ -}}
-    {{- $theme := .Site.Params.defaulttheme -}}
-    <script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script>
-    {{- /* Body wrapper */ -}}
-    
-    <div class="wrapper">
-      <div id="web_bg"></div>
-      <canvas id="universe"></canvas>
-      {{- partial "header.html" . -}}
-      {{- $toc := .Scratch.Get "toc" -}}
-      <main class="container{{ if (eq $toc.enable true) | and (eq $toc.position `left`) }}-reverse{{ end }}" data-page-style="{{ (.Scratch.Get `params`).pageStyle | default `normal` }}">
-        {{- block "content" . }}{{ end -}}
-      </main>
-      {{- partial "footer.html" . -}}
+<head>
+  {{ if (eq .Kind "home") | and (ne .Site.Params.disableThemeInject true) }}
+  <meta name="theme" content='FixIt {{ .Scratch.Get "version" }}'>
+  {{ end }}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta name="robots" content="noodp" />
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+  {{- partial "head/meta.html" . -}}
+  {{- partial "head/link.html" . -}}
+  {{- partial "head/seo.html" . -}}
+</head>
+
+<body data-header-desktop="{{ .Site.Params.header.desktopMode }}"
+  data-header-mobile="{{ .Site.Params.header.mobileMode }}">
+  {{- /* Check theme isDark before body rendering */ -}}
+  {{- $theme := .Site.Params.defaulttheme -}}
+  <script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script>
+  {{- /* Body wrapper */ -}}
+
+  <div class="wrapper">
+    <div id="web_bg"></div>
+    <canvas id="universe"></canvas>
+    {{- partial "header.html" . -}}
+    {{- $toc := .Scratch.Get "toc" -}}
+    <main class="container{{ if (eq $toc.enable true) | and (eq $toc.position `left`) }}-reverse{{ end }}"
+      data-page-style="{{ (.Scratch.Get `params`).pageStyle | default `normal` }}">
+      {{- block "content" . }}{{ end -}}
+      <div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div>
+    </main>
+  </div>
+  <div class="myposts">
+    <div class="tips">
+      {{- /* Posts */ -}}
+      {{- if ne $posts.enable false | and .Site.RegularPages -}}
+      {{- /* Paginate */ -}}
+      {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+      {{- if .Site.Params.page.hiddenFromHomePage -}}
+      {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+      {{- else -}}
+      {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+      {{- end -}}
+      {{- with $posts.paginate | default .Site.Params.paginate -}}
+      {{- $pages = $.Paginate $pages . -}}
+      {{- else -}}
+      {{- $pages = .Paginate $pages -}}
+      {{- end -}}
+      {{- range $pages.Pages -}}
+      {{- .Render "summary" -}}
+      {{- end -}}
+      {{- partial "paginator.html" . -}}
+      {{- end -}}
     </div>
+  </div>
+  {{- partial "footer.html" . -}}
+  {{- /* Theme widgets */ -}}
+  {{- partial "widgets.html" . -}}
 
-    {{- /* Theme widgets */ -}}
-    {{- partial "widgets.html" . -}}
+  {{- /* Load JavaScript scripts and CSS */ -}}
+  {{- partial "assets.html" . -}}
 
-    {{- /* Load JavaScript scripts and CSS */ -}}
-    {{- partial "assets.html" . -}}
-    {{/*  <span id="fps">
-      FPS:95 
-      <span style="color:#39c5bb">十分流畅🤣</span>
-    </span>  */}}
-  </body>
+</body>
+
 </html>
 <style>
-  body{
+  body {
     background-image: url("{{ $lightimage }}");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 </style>
