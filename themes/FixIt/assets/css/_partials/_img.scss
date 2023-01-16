@@ -7,6 +7,6 @@ img {
   }
 
   &.lazyloaded {
-    @include object-fit(contain);
+    @include object-fit(cover);
   }
 }
