@@ -15,21 +15,68 @@
   font-display: block;
 }
 
+// ===================================================================================================
+
+* {
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='1.0' fill='rgb(57, 197, 187)'/></svg>") 4 4, auto;
+}
+
+
+/* 鼠标样式 */
+#cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  /* 这里改变跟随的底色 */
+  background: $theme-color;
+  border-radius: 8px;
+  opacity: 0.25;
+  z-index: 10086;
+  pointer-events: none;
+  transition: 0.2s ease-in-out;
+  transition-property: background, opacity, transform;
+}
+
+#cursor.hidden {
+  opacity: 0;
+}
+
+#cursor.hover {
+  opacity: 0.1;
+  transform: scale(2.5);
+  -webkit-transform: scale(2.5);
+  -moz-transform: scale(2.5);
+  -ms-transform: scale(2.5);
+  -o-transform: scale(2.5);
+}
+
+#cursor.active {
+  opacity: 0.5;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+}
+
+
+// ===================================================================================================
 
 .wrapper {
   font-family: HYTMR;
-  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='1.0' fill='rgb(57, 197, 187)'/></svg>") 4 4, auto;
-
 
   // web-bg类固定位置，且在正文和背景之间进行透明度为0.5的遮罩
   #web_bg {
-    position: fixed;
+    position: absolute;
     z-index: -1;
     width: 100%;
     height: 100vh;
+
     [data-theme="dark"] & {
+      position: fixed;
       height: 100%;
     }
+
     background-color: black;
     opacity: 0.5;
   }
@@ -80,16 +127,14 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: $theme-color;
-  background-image: -webkit-linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.4) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.4) 75%,
-    transparent 75%,
-    transparent
-  );
+  background-image: -webkit-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.4) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
+      transparent 75%,
+      transparent);
   border-radius: 2em;
 }
 
@@ -101,3 +146,246 @@
   color: #fff;
   background-color: $theme-color;
 }
+
+// ===================================================================================================
+/* 日间模式不生效 */
+[data-theme="light"] #site-name,
+[data-theme="light"] #site-title,
+[data-theme="light"] #site-subtitle,
+[data-theme="light"] #post-info {
+  animation: none;
+}
+
+/* 夜间模式生效 */
+[data-theme="dark"] #site-name,
+[data-theme="dark"] #site-title {
+  animation: light_15px 10s linear infinite;
+}
+
+[data-theme="dark"] #site-subtitle {
+  animation: light_10px 10s linear infinite;
+}
+
+[data-theme="dark"] #post-info {
+  animation: light_5px 10s linear infinite;
+}
+
+/* 关键帧描述 */
+@keyframes light_15px {
+  0% {
+    text-shadow: #5636ed 0 0 15px;
+  }
+
+  12.5% {
+    text-shadow: #11ee5e 0 0 15px;
+  }
+
+  25% {
+    text-shadow: #f14747 0 0 15px;
+  }
+
+  37.5% {
+    text-shadow: #f1a247 0 0 15px;
+  }
+
+  50% {
+    text-shadow: #f1ee47 0 0 15px;
+  }
+
+  50% {
+    text-shadow: #b347f1 0 0 15px;
+  }
+
+  62.5% {
+    text-shadow: #002afa 0 0 15px;
+  }
+
+  75% {
+    text-shadow: #ed709b 0 0 15px;
+  }
+
+  87.5% {
+    text-shadow: #39c5bb 0 0 15px;
+  }
+
+  100% {
+    text-shadow: #5636ed 0 0 15px;
+  }
+}
+
+@keyframes light_10px {
+  0% {
+    text-shadow: #5636ed 0 0 10px;
+  }
+
+  12.5% {
+    text-shadow: #11ee5e 0 0 10px;
+  }
+
+  25% {
+    text-shadow: #f14747 0 0 10px;
+  }
+
+  37.5% {
+    text-shadow: #f1a247 0 0 10px;
+  }
+
+  50% {
+    text-shadow: #f1ee47 0 0 10px;
+  }
+
+  50% {
+    text-shadow: #b347f1 0 0 10px;
+  }
+
+  62.5% {
+    text-shadow: #002afa 0 0 10px;
+  }
+
+  75% {
+    text-shadow: #ed709b 0 0 10px;
+  }
+
+  87.5% {
+    text-shadow: #39c5bb 0 0 10px;
+  }
+
+  100% {
+    text-shadow: #5636ed 0 0 10px;
+  }
+}
+
+@keyframes light_5px {
+  0% {
+    text-shadow: #5636ed 0 0 5px;
+  }
+
+  12.5% {
+    text-shadow: #11ee5e 0 0 5px;
+  }
+
+  25% {
+    text-shadow: #f14747 0 0 5px;
+  }
+
+  37.5% {
+    text-shadow: #f1a247 0 0 15px;
+  }
+
+  50% {
+    text-shadow: #f1ee47 0 0 5px;
+  }
+
+  50% {
+    text-shadow: #b347f1 0 0 5px;
+  }
+
+  62.5% {
+    text-shadow: #002afa 0 0 5px;
+  }
+
+  75% {
+    text-shadow: #ed709b 0 0 5px;
+  }
+
+  87.5% {
+    text-shadow: #39c5bb 0 0 5px;
+  }
+
+  100% {
+    text-shadow: #5636ed 0 0 5px;
+  }
+}
+
+// ================================================================================================
+
+.Cuteen_DarkSky,
+.Cuteen_DarkSky:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 88888888;
+}
+
+.Cuteen_DarkSky {
+    background: linear-gradient(to top, #f8cd71 0, #5bfde9 80%);
+}
+
+.Cuteen_DarkSky:before {
+    transition: 2s ease all;
+    opacity: 0;
+    background: linear-gradient(to top, #30cfd0 0, #330867 100%);
+}
+
+.DarkMode .Cuteen_DarkSky:before {
+    opacity: 1;
+}
+
+.Cuteen_DarkPlanet {
+    z-index: 99999999;
+    position: fixed;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    -webkit-animation: CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1);
+    animation: CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1);
+    transform-origin: center bottom;
+}
+
+@-webkit-keyframes CuteenPlanetMove {
+    0% {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes CuteenPlanetMove {
+    0% {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.Cuteen_DarkPlanet #sun {
+    position: absolute;
+    border-radius: 100%;
+    left: 44%;
+    top: 30%;
+    height: 6rem;
+    width: 6rem;
+    background: #ffee94;
+    box-shadow: 0 0 40px #ffee94;
+}
+
+.Cuteen_DarkPlanet #moon {
+    position: absolute;
+    border-radius: 100%;
+    left: 44%;
+    top: 30%;
+    position: absolute;
+    border-radius: 100%;
+    height: 6rem;
+    width: 6rem;
+    box-shadow: -1.8em 1.8em 0 0.2em #fff;
+}
+
+.search span {
+    display: none;
+}
+
+.menus_item a {
+    text-decoration: none !important;
+}
+
+
+// ===================================================================================================

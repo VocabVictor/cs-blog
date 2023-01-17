@@ -143,7 +143,14 @@
         </li>
         {{- end -}}
         <li class="menu-item theme-switch" title="{{ T " switchTheme" }}">
-          {{ dict "Class" "fa-solid fa-adjust fa-fw" | partial "plugin/icon.html" }}
+          {{/*  {{ dict "Class" "fa-solid fa-adjust fa-fw" | partial "plugin/icon.html" }}  */}}
+          <a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换"
+          id="nightmode-button" data-pjax-state="external">
+          <svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px"
+              viewBox="0 0 1024 1024">
+              <use id="modeicon" xlink:href="#icon-sun"></use>
+          </svg>
+      </a>
         </li>
       </ul>
     </nav>

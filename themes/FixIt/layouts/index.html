@@ -28,10 +28,12 @@
 {{- define "tips" -}}
 {{- $params := .Scratch.Get "params" -}}
 {{- $posts := .Site.Params.home.posts -}}
+
+{{- /* Posts */ -}}
+{{/* 遍历所有页面，利用.Render "summary"生成文章摘要，并调用分页组件 */}}
+{{- if ne $posts.enable false | and .Site.RegularPages -}}
+
 <div class="tips">
-    {{- /* Posts */ -}}
-    {{/* 遍历所有页面，利用.Render "summary"生成文章摘要，并调用分页组件 */}}
-    {{- if ne $posts.enable false | and .Site.RegularPages -}}
     {{/* */}}
     {{- $pages := where .Site.RegularPages "Type" "posts" -}}
 
@@ -52,8 +54,9 @@
     {{- range $pages.Pages -}}
     {{- .Render "summary" -}}
     {{- end -}}
-
-    {{- end -}}
-
 </div>
+{{- partial "paginator.html" . -}}
+
+{{- end -}}
+
 {{- end -}}

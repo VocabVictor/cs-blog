@@ -4,6 +4,8 @@
 $theme-color: #39C5BB !default; // 潮蓝
 $submenu-font-color: #4c4948 !default; // 深灰
 $text-highlight-color: #1f2d3d !default; 
+$btn-hover-color: #ff7242 !default; // 橙色
+$btn-hover-color-dark: #787878 !default; // 深灰
 // ========== Global ========== //
 // Prefix for :root CSS variables.
 $prefix: fi- !default;
@@ -14,6 +16,8 @@ $global-font-size: 17px !default;
 $text-font-size: 19px !default;
 $global-font-weight: 400 !default;
 $global-line-height: 1.5rem !default;
+
+$card-box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
 
 $summary-width:26vw !default;
 $summary-height:26vw !default;

@@ -22,57 +22,44 @@
     }
   }
 
-  li {
+  .page-item {
     padding: 5px;
-    margin: 0 10px;
     box-sizing: border-box;
     position: relative;
-    display: inline;
+    border-radius: 8px;
+
+    display: inline-flex;
+    margin: 0 6px;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+      background-color: $btn-hover-color;
+      [data-theme='dark'] & {
+        background-color: $btn-hover-color-dark;
+      }
+    }
+
+    [data-theme='dark'] & {
+      background-color: $global-background-color-dark;
+    }
+
+    @include transition(0.3s);
+    box-shadow: $card-box-shadow;
+    background-color: $global-background-color;
 
     &.disabled {
       display: none;
     }
 
-    &:hover a {
-      color: $pagination-link-hover-color;
-    }
-
-    [data-theme='dark'] &:hover a {
-      color: $pagination-link-hover-color-dark;
-    }
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: '';
-      width: 0;
-      height: 3px;
-      background: $pagination-link-hover-color;
-      @include transition(0.3s);
-      bottom: 0px;
-    }
-
-    [data-theme='dark'] &::before,
-    [data-theme='dark'] &::after {
-      background: $pagination-link-hover-color-dark;
-    }
-
-    &::before {
-      left: 50%;
-    }
-
-    &::after {
-      right: 50%;
-    }
-
-    &:hover {
-      &::before,
-      &::after {
-        width: 50%;
-      }
-    }
-
     &.active {
+      background-color: $theme-color;
+
       a {
         color: $pagination-link-hover-color;
       }
@@ -81,10 +68,6 @@
         color: $pagination-link-hover-color-dark;
       }
 
-      &::before,
-      &::after {
-        width: 50%;
-      }
     }
   }
 }

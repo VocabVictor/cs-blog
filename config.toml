@@ -142,7 +142,7 @@ summaryLength = 20
     #  公网安备信息，仅在中国使用（支持 HTML 格式）
     gov = ""
     #  ICP 备案信息，仅在中国使用（支持 HTML 格式）
-    icp = ""
+    icp = "闽ICP备2021013910号-1"
     # 许可协议信息（支持 HTML 格式）
     license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
     #  网站创立时间
@@ -587,6 +587,8 @@ summaryLength = 20
         # 或者
         jquery = "https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"
         universescript = "js/universe.js"
+        cursorjs = "js/cursor.js"
+        sun_moonjs = "js/sun_moon.js"
     #  页面 SEO 配置
     [params.page.seo]
       # 图片 URL
