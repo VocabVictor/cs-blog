@@ -12,7 +12,7 @@
   <pubDate>Sun, 15 Jan 2023 21:54:30 &#43;0800</pubDate>
   <author>VocabVictor</author>
   <guid>https://cs-blog-beta.vercel.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
-  <description><![CDATA[操作系统实验 实验三 生产者线程函数和消费者线程函数中的临界资源是什么? 临界资源只有一个，即存储产品的缓冲池。具体代码如下： 1 2 3 4 5 // // 缓冲池]]></description>
+  <description><![CDATA[操作系统实验 实验三 生产者线程函数和消费者]]></description>
 </item>
 </channel>
 </rss>

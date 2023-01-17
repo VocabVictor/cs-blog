@@ -3,6 +3,7 @@
 {{- $lightimage := .Site.Params.lightimage -}}
 {{- $darkimage := .Site.Params.darkimage -}}
 {{- $posts := .Site.Params.home.posts -}}
+
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.LanguageCode }}">
 
@@ -39,27 +40,7 @@
     </main>
   </div>
   <div class="myposts">
-    <div class="tips">
-      {{- /* Posts */ -}}
-      {{- if ne $posts.enable false | and .Site.RegularPages -}}
-      {{- /* Paginate */ -}}
-      {{- $pages := where .Site.RegularPages "Type" "posts" -}}
-      {{- if .Site.Params.page.hiddenFromHomePage -}}
-      {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
-      {{- else -}}
-      {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
-      {{- end -}}
-      {{- with $posts.paginate | default .Site.Params.paginate -}}
-      {{- $pages = $.Paginate $pages . -}}
-      {{- else -}}
-      {{- $pages = .Paginate $pages -}}
-      {{- end -}}
-      {{- range $pages.Pages -}}
-      {{- .Render "summary" -}}
-      {{- end -}}
-      {{- partial "paginator.html" . -}}
-      {{- end -}}
-    </div>
+    {{- block "tips" . }}{{ end -}}
   </div>
   {{- partial "footer.html" . -}}
   {{- /* Theme widgets */ -}}

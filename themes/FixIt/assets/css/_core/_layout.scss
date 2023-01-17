@@ -35,6 +35,8 @@
           text-align: center;
           text-shadow: 2px 2px 4px rgba($color: #000, $alpha: 0.15);
           line-height: 1.5;
+          // 上下晃动
+          animation: bounce 2s infinite;
         }
       }
     }
