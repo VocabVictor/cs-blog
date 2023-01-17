@@ -1,8 +1,11 @@
 /** Layout **/
+.wrapper:has(.posts){
+  height: 100vh;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
 
   main {
@@ -12,34 +15,49 @@
       order: 2;
     }
 
-    &.container {
-      display: flex;
+    &.container:has(.posts,.archive){
+      flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+    }
+
+    &.container {
+      display: flex;
+
       padding: 0 1rem;
-      flex-direction: column;
+      
 
       &:has(.home:not(.posts)) {
         align-items: center;
       }
 
-      #scroll-down {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-
-        .scroll-down-effects {
-          position: relative;
-          width: 100%;
-          color: $global-font-color-dark;
-          font-size: 30px;
-          text-align: center;
-          text-shadow: 2px 2px 4px rgba($color: #000, $alpha: 0.15);
-          line-height: 1.5;
-          // 上下晃动
-          animation: bounce 2s infinite;
-        }
+      #scroll-down{
+        display: none;
       }
+
+      .posts{
+
+        & ~ #scroll-down {
+          position: absolute;
+          display: block;
+          bottom: 0;
+          width: 100%;
+  
+          .scroll-down-effects {
+            position: relative;
+            width: 100%;
+            color: $global-font-color-dark;
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba($color: #000, $alpha: 0.15);
+            line-height: 1.5;
+            // 上下晃动
+            animation: bounce 2s infinite;
+          }
+        }
+
+      }
+
     }
 
     &.container-reverse {
@@ -50,11 +68,94 @@
 }
 
 .myposts {
+  width: calc(#{$summary-width} * 3);
+  margin: 2rem auto;
+
+  .recent_posts{
+    width: 100%;
+    height: calc(#{$summary-height} - 2 * #{$summary-margin});
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $global-background-color;
+    border-radius: $tip-border-radius;
+    color: $text-highlight-color;
+
+    [data-theme="dark"] & {
+      background-color: $global-background-color-dark;
+      color: $global-font-color-dark;
+    }
+
+    a{
+      color: $text-highlight-color;
+      [data-theme="dark"] & {
+        color: $global-font-color-dark;
+      }      
+
+      &:hover{
+        color: $theme-color;
+      }
+    }
+
+    .recent_post{
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: none;
+      .featured-image-preview{
+        margin: 0 2rem;
+        height: $summary-img-height;
+        border-radius: $tip-border-radius;
+        img{
+          height: 100%;
+          border-radius: $tip-border-radius;
+        }
+      }
+
+      &.active{
+        display: flex;
+      }
+    }
+
+    .blog-slider__pagination {
+      width: 11px!important;
+      text-align: center;
+      height: 80%;
+      margin: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .swiper-pagination-bullet {
+        width: 11px;
+        height: 11px;
+        display: block;
+        border-radius: 10px;
+        background: #858585;
+        opacity: .2;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -ms-transition: all .3s;
+        transition: all .3s;
+      }
+
+      .active {
+        opacity: 1;
+        -ms-filter: none;
+        filter: none;
+        background: $theme-color;
+        height: 30px;
+      }
+    }
+  }
+
   .tips {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: calc(#{$summary-width} * 3);
+    width: 100%;
 
     .summary {
       margin: $summary-margin;
@@ -68,6 +169,16 @@
       [data-theme="dark"] & {
         background-color: rgba($color: $global-background-color-dark, $alpha: 0.8);
         color: $home-font-color;
+      }
+
+      .mymeta{
+        margin: 10px 0;
+        .post-footer{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }

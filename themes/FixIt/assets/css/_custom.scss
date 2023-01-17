@@ -149,20 +149,30 @@
 
 // ===================================================================================================
 /* 日间模式不生效 */
-[data-theme="light"] #site-name,
-[data-theme="light"] #site-title,
-[data-theme="light"] #site-subtitle,
-[data-theme="light"] #post-info {
-  animation: none;
+
+.header-title,.home-title,.home-subtitle{
+  [data-theme="light"] & {
+    animation: none;
+  }
+}
+
+.single-title.animate__animated.animate__flipInX{
+  [data-theme="light"] & {
+    animation: none;
+  }
+  [data-theme="dark"] & {
+    animation: light_15px 10s linear infinite;
+  }
 }
 
 /* 夜间模式生效 */
-[data-theme="dark"] #site-name,
-[data-theme="dark"] #site-title {
-  animation: light_15px 10s linear infinite;
+.header-title,.home-title{
+  [data-theme="dark"] & {
+    animation: light_15px 10s linear infinite;
+  }
 }
 
-[data-theme="dark"] #site-subtitle {
+[data-theme="dark"] .home-subtitle {
   animation: light_10px 10s linear infinite;
 }
 
@@ -389,3 +399,6 @@
 
 
 // ===================================================================================================
+.wrapper:has(.single) #web_bg {
+    display: none;
+}

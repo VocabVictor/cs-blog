@@ -23,7 +23,7 @@
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cs-blog-beta.vercel.app/en/" /><link rel="alternate" href="/en/index.xml" type="application/rss+xml" title="My New Hugo FixIt Site">
-  <link rel="feed" href="/en/index.xml" type="application/rss+xml" title="My New Hugo FixIt Site"><link rel="stylesheet" href="/css/style.min.2bb49c961ecdd86d93d257739f8fbe590b79fbf1dd8d1c8e12a746bb623418cb.css" integrity="sha256-K7Sclh7N2G2T0ldzn4&#43;&#43;WQt5&#43;/HdjRyOEqdGu2I0GMs="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+  <link rel="feed" href="/en/index.xml" type="application/rss+xml" title="My New Hugo FixIt Site"><link rel="stylesheet" href="/css/style.min.ec4f8df1a4059a053bb4f81418b023282df6fb04a305870d7363e88fb586c0a3.css" integrity="sha256-7E&#43;N8aQFmgU7tPgUGLAjKC32&#43;wSjBYcNc2Poj7WGwKM="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -35,7 +35,16 @@
   </script></head>
 
 <body data-header-desktop="sticky"
-  data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper">
+  data-header-mobile="auto"><script>
+    (
+      window.localStorage?.getItem('theme') ?
+        localStorage.getItem('theme') === 'dark' :
+        ('auto' === 'auto' ?
+          window.matchMedia('(prefers-color-scheme: dark)').matches :
+          'auto' === 'dark'
+        )
+    ) && document.body.setAttribute('data-theme', 'dark');
+  </script><div class="wrapper">
     <div id="web_bg">
       <svg aria-hidden='true' style='position:absolute; overflow:hidden; width:0; height:0'>
         <symbol id='icon-sun' viewBox='0 0 1024 1024'>
@@ -83,20 +92,6 @@
             </li><li class="menu-item">
               <a href="/fr/" class="menu-link" title="Français">Français</a>
             </li></ul>
-        </li><li class="menu-item search" id="search-desktop">
-          <input type="text" placeholder="Search titles or contents ..."
-            id="search-input-desktop">
-          <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop"
-            title="Search">
-            <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
-          </a>
-          <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop"
-            title="Clear">
-            <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
-          </a>
-          <span class="search-button search-loading" id="search-loading-desktop">
-            <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-          </span>
         </li><li class="menu-item theme-switch" title="">
           
           <a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换"
@@ -120,26 +115,7 @@
       </div>
     </div>
     <nav>
-      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
-          <div class="search mobile" id="search-mobile">
-            <input type="text" placeholder="Search titles or contents ..."
-              id="search-input-mobile">
-            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile"
-              title="Search">
-              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
-            </a>
-            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile"
-              title="Clear">
-              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
-            </a>
-            <span class="search-button search-loading" id="search-loading-mobile">
-              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-            </span>
-          </div>
-          <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-            Cancel
-          </a>
-        </li><li
+      <ul class="menu" id="menu-mobile"><li
           class="menu-item"><a class="menu-link" href="/en/posts/"  >Posts</a></li><li
           class="menu-item"><a class="menu-link" href="/en/tags/"  >Tags</a></li><li
           class="menu-item"><a class="menu-link" href="/en/categories/"  >Categories</a></li><li class="menu-item theme-switch" title="">
@@ -151,12 +127,7 @@
         </li></ul>
     </nav>
   </div>
-</header><div class="search-dropdown desktop">
-  <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-  <div id="search-dropdown-mobile"></div>
-</div><main class="container"
+</header><main class="container"
       data-page-style="normal"><div class="page home posts"><div class="home-profile"><div class="home-avatar"><a href="/en/posts/" title="Posts"><img
     class="lazyload"
     src="/svg/loading.min.svg"
@@ -180,12 +151,25 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="View Comments"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/hugo-fixit/FixIt" title="在 GitHub 上查看源代码"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
     <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
   </noscript>
-</div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/green/pace-theme-barber-shop.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js"></script><script src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/typeit@8.7.0/dist/index.umd.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/mhchem.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cell-watermark@1.0.3/src/watermark.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" async defer></script><script src="/js/cursor.0f1a37b499082732aec9d386eaf4e658cb02b227baa8b19578376cbca74e4067.js" integrity="sha256-Dxo3tJkIJzKuydOG6vTmWMsCsie6qLGVeDdsvKdOQGc=" defer></script><script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" defer></script><script src="/js/sun_moon.068f32b9c092be59dfb783ad4a3a4e31d7a6be3128410912f6638f98c0976061.js" integrity="sha256-Bo8yucCSvlnft4OtSjpOMdemvjEoQQkS9mOPmMCXYGE=" defer></script><script src="/js/universe.fe7ce2e3ec2c9f184a600b9cdef2cd1ed308b8cf1766f76022a95260e9a4c663.js" integrity="sha256-/nzi4+wsnxhKYAuc3vLNHtMIuM8XZvdgIqlSYOmkxmM=" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-profile-subtitle":"Hope you have a nice day!🍭🍭"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/en/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-profile-subtitle":["typeit-profile-subtitle"]},"duration":1000,"speed":150},"watermark":{"appendto":".wrapper\u003emain","colspacing":30,"content":"","enable":true,"fontfamily":"inherit","fontsize":0.85,"height":20,"opacity":0.05,"rotate":15,"rowspacing":60,"width":150}};</script><script src="/js/theme.min.82fa6b2f98f173847d89e56150f7480a61c125b301dcccc0f5ad500a083f3a5a.js" integrity="sha256-gvprL5jxc4R9ieVhUPdICmHBJbMB3MzA9a1QCgg/Olo=" defer></script></body>
+</div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/green/pace-theme-barber-shop.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/zoom/lg-zoom.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/typeit@8.7.0/dist/index.umd.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/mhchem.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cell-watermark@1.0.3/src/watermark.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" async defer></script><script src="/js/cursor.0f1a37b499082732aec9d386eaf4e658cb02b227baa8b19578376cbca74e4067.js" integrity="sha256-Dxo3tJkIJzKuydOG6vTmWMsCsie6qLGVeDdsvKdOQGc=" defer></script><script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" defer></script><script src="/js/recent_posts.eee3aab1dea8c9fd7e05f4bf35074efecdfa78eebc65b2064a676f58727df34d.js" integrity="sha256-7uOqsd6oyf1+BfS/NQdO/s36eO68ZbIGSmdvWHJ9800=" defer></script><script src="/js/sun_moon.f12a9626305b733af80e13d7a6589e97ca3835cfe83e33143669234f7305a151.js" integrity="sha256-8SqWJjBbczr4DhPXpliel8o4Nc/oPjMUNmkjT3MFoVE=" defer></script><script src="/js/universe.3b714b9055cefdf0dbdb70c86eec31acc43e352ec71b1a2950ac1fd43a1bb8de.js" integrity="sha256-O3FLkFXO/fDb23DIbuwxrMQ+NS7HGxopUKwf1DobuN4=" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-profile-subtitle":"Hope you have a nice day!🍭🍭"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"twemoji":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-profile-subtitle":["typeit-profile-subtitle"]},"duration":1000,"speed":150},"watermark":{"appendto":".wrapper\u003emain","colspacing":30,"content":"","enable":true,"fontfamily":"inherit","fontsize":0.85,"height":20,"opacity":0.05,"rotate":15,"rowspacing":60,"width":150}};</script><script src="/js/theme.min.82fa6b2f98f173847d89e56150f7480a61c125b301dcccc0f5ad500a083f3a5a.js" integrity="sha256-gvprL5jxc4R9ieVhUPdICmHBJbMB3MzA9a1QCgg/Olo=" defer></script></body>
 
 </html>
 <style>
+  :root {
+    --light-image: url(https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp);
+    --dark-image: url(https://cs-blog-1304916025.cos.ap-nanjing.myqcloud.com/yuanshen1.webp);
+  }
+
+  body[data-theme="light"] {
+    background-image: var(--light-image);
+  }
+
+  body[data-theme="dark"] {
+    background-image: var(--dark-image);
+  }
+
   body {
-    background-image: url("https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp");
+    background-image: var(--light-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

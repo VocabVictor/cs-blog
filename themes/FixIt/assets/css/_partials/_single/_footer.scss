@@ -32,10 +32,7 @@
 .post-footer {
   margin: 0 0;
   padding: 0 1em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+
   white-space: nowrap;
   font-size: 14px;
 
@@ -45,7 +42,11 @@
   }
 
   a {
-    color: $submenu-font-color !important;
+    color: $global-font-color !important;
+
+    [data-theme='dark'] & {
+      color: $global-font-color-dark !important;
+    }
   }
 
   &:has(~.post-reward) {

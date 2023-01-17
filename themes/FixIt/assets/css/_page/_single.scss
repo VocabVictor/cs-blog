@@ -12,6 +12,9 @@
     >a{
       color: $text-highlight-color;
       font-size: $text-font-size;
+      [data-theme="dark"] & {
+        color: $global-font-color-dark;
+      }
     }
 
     .icon-repost {

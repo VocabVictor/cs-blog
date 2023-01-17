@@ -16,7 +16,7 @@ summaryLength = 20
 [params]
   # 背景图片,支持本地资源和网络资源
   lightimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
-  darkimage = "https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp"
+  darkimage = "https://cs-blog-1304916025.cos.ap-nanjing.myqcloud.com/yuanshen1.webp"
   # 日夜切换的动画是否开启
   transition = false
   # 摘要最大长度,用来限制页面级别的手写摘要和描述的最大长度
@@ -589,6 +589,7 @@ summaryLength = 20
         universescript = "js/universe.js"
         cursorjs = "js/cursor.js"
         sun_moonjs = "js/sun_moon.js"
+        recent_postsjs = "js/recent_posts.js"
     #  页面 SEO 配置
     [params.page.seo]
       # 图片 URL

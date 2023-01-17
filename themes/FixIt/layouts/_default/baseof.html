@@ -25,7 +25,16 @@
   data-header-mobile="{{ .Site.Params.header.mobileMode }}">
   {{- /* Check theme isDark before body rendering */ -}}
   {{- $theme := .Site.Params.defaulttheme -}}
-  <script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script>
+  <script>
+    (
+      window.localStorage?.getItem('theme') ?
+        localStorage.getItem('theme') === 'dark' :
+        ('{{ $theme }}' === 'auto' ?
+          window.matchMedia('(prefers-color-scheme: dark)').matches :
+          '{{ $theme }}' === 'dark'
+        )
+    ) && document.body.setAttribute('data-theme', 'dark');
+  </script>
   {{- /* Body wrapper */ -}}
 
   <div class="wrapper">
@@ -63,6 +72,7 @@
     </main>
   </div>
   <div class="myposts">
+    {{- block "recent_posts" . }}{{ end -}}
     {{- block "tips" . }}{{ end -}}
   </div>
   {{- partial "footer.html" . -}}
@@ -76,8 +86,21 @@
 
 </html>
 <style>
+  :root {
+    --light-image: url({{ $lightimage }});
+    --dark-image: url({{ $darkimage }});
+  }
+
+  body[data-theme="light"] {
+    background-image: var(--light-image);
+  }
+
+  body[data-theme="dark"] {
+    background-image: var(--dark-image);
+  }
+
   body {
-    background-image: url("{{ $lightimage }}");
+    background-image: var(--light-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

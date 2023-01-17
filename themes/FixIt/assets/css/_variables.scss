@@ -34,22 +34,22 @@ $global-background-color-dark: #292a2e !default;
 
 // Color of the text
 $global-font-color: #161209 !default;
-$global-font-color-dark: #b1b1ba !default;
+$global-font-color-dark: #fff !default;
 
 // color of home
 $home-font-color:#fff !default;
-$home-font-color-dark:#161209 !default;
+$home-font-color-dark:#fff !default;
 
 // Color of the secondary text
 $global-font-secondary-color: #b1b1ba !default;
 $global-font-secondary-color-dark: #909092 !default;
 
 // Color of the link
-$global-link-color: #eee !default;
-$global-link-color-dark: #b1b1ba !default;
+$global-link-color: #fff !default;
+$global-link-color-dark: #fff !default;
 
 // Color of the hover link
-$global-link-hover-color: #2983bb !default; // 潮蓝
+$global-link-hover-color: #39C5BB !default; // 潮蓝
 $global-link-hover-color-dark: #fff !default;
 
 // Color of the border
@@ -107,7 +107,7 @@ $toc-content-font-size: 1rem !default;
 
 // Color of the single link
 $single-link-color: #2376b7 !default; // 花青
-$single-link-color-dark: #1781b5 !default; // 釉蓝
+$single-link-color-dark: #fff !default; // 釉蓝
 
 // Color of the hover single link
 $single-link-hover-color: #ea517f !default; // 莲瓣红

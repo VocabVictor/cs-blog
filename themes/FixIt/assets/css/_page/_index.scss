@@ -1,6 +1,15 @@
 .page {
   position: relative;
 
+  &.single{
+    padding: 2rem;
+    background-color: rgba($color:$global-background-color , $alpha: 1.0);
+    border-radius: $tip-border-radius;
+    [data-theme="dark"] & {
+      background-color: rgba($color:$global-background-color-dark , $alpha: 1.0);
+    }
+  }
+
   .content {
     [id] {
       scroll-margin-top: $header-height;

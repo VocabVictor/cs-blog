@@ -25,6 +25,37 @@
 
 {{- end -}}
 
+{{- define "recent_posts" -}}
+{{- $params := .Scratch.Get "params" -}}
+{{- $posts := .Site.Params.home.posts -}}
+{{- $pages := where .Site.RegularPages "Type" "posts" -}}
+{{/* 遍历所有页面，最后保留最近更新的6个页面 */}}
+{{- if ne $posts.enable false | and .Site.RegularPages -}}
+<div class="recent_posts">
+    {{/* */}}
+    {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+
+    {{/* */}}
+    {{- if .Site.Params.page.hiddenFromHomePage -}}
+    {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+    {{- else -}}
+    {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+    {{- end -}}
+
+    {{- range first 9 $pages -}}
+    {{- .Render "recent_post" -}}
+    {{- end -}}
+
+    <div class="blog-slider__pagination">
+        {{- range seq 9 -}}
+            <span class="swiper-pagination-bullet"></span>
+        {{- end -}}
+    </div>
+</div>
+{{- end -}}
+
+{{- end -}}
+
 {{- define "tips" -}}
 {{- $params := .Scratch.Get "params" -}}
 {{- $posts := .Site.Params.home.posts -}}
