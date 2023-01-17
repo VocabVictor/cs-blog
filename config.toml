@@ -68,7 +68,7 @@ summaryLength = 20
 
   #  搜索配置
   [params.search]
-    enable = true
+    enable = false
     # 搜索引擎的类型 ["lunr", "algolia", "fuse"]
     type = "lunr"
     # 文章内容最长索引长度
@@ -315,9 +315,9 @@ summaryLength = 20
     #  是否在搜索结果中隐藏一篇文章
     hiddenFromSearch = false
     #  是否使用 twemoji
-    twemoji = false
+    twemoji = true
     # 是否使用 lightgallery
-    lightgallery = false
+    lightgallery = true
     #  是否使用 ruby 扩展语法
     ruby = true
     #  是否使用 fraction 扩展语法

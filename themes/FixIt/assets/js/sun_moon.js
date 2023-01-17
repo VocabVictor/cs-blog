@@ -11,7 +11,7 @@ function switchNightMode() {
                     }, 1e3);
                 }, 2e3)
         })
-    const nowMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+    const nowMode = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
 
     if (nowMode === 'light') {
         // 先设置太阳月亮透明度
@@ -22,7 +22,6 @@ function switchNightMode() {
             document.getElementById("moon").style.opacity = "1";
         }, 1000);
 
-        document.documentElement.setAttribute('data-theme', 'dark')
         // GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
         document.getElementById('modeicon').setAttribute('xlink:href', '#icon-sun')
 
@@ -35,7 +34,6 @@ function switchNightMode() {
             document.getElementById("moon").style.opacity = "0";
         }, 1000);
 
-        document.documentElement.setAttribute('data-theme',"light")
         document.querySelector('body').classList.add('DarkMode'), document.getElementById('modeicon').setAttribute('xlink:href', '#icon-moon')
     }
     // handle some cases
