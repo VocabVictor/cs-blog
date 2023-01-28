@@ -4,7 +4,15 @@
     <link>https://cs-blog-beta.vercel.app/</link>
     <description>Hope you have a nice day!🍭🍭</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>w93854@outlook.com (VocabVictor)</managingEditor>
-      <webMaster>w93854@outlook.com (VocabVictor)</webMaster>
+      <webMaster>w93854@outlook.com (VocabVictor)</webMaster><lastBuildDate>Wed, 18 Jan 2023 05:28:40 &#43;0800</lastBuildDate>
       <atom:link href="https://cs-blog-beta.vercel.app/index.xml" rel="self" type="application/rss+xml" />
-    </channel>
+    <item>
+  <title>生成多轮对话实践（一）</title>
+  <link>https://cs-blog-beta.vercel.app/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80/</link>
+  <pubDate>Wed, 18 Jan 2023 05:28:40 &#43;0800</pubDate>
+  <author>VocabVictor</author>
+  <guid>https://cs-blog-beta.vercel.app/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

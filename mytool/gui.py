@@ -35,6 +35,8 @@ class GUI(tk.Tk):
         # 更改窗口的标题
         self.title('Hugo博客自动更新工具')
 
+        self.protocol("WM_DELETE_WINDOW", self.on_closing)
+
         # 核心工具类
         self.auto_commit = AutoCommit()
 
@@ -266,6 +268,7 @@ class GUI(tk.Tk):
         # 新建文章
         self.log('新建文章')
         self.auto_commit.new_post(self.tkvar["article_title"].get())
+        self.article_path = "content/posts/" + self.tkvar['article_title'].get() + ".md"
         self.markdown.set_path(self.article_path)
         data = {}
         # 字符串按逗号分割成列表
@@ -429,6 +432,10 @@ class GUI(tk.Tk):
 
     def update_log(self, log):
         self.config['log'].set(log)
+
+    def on_closing(self):
+        self.save_config()
+        self.destroy()
 
 if __name__ == '__main__':
     gui = GUI()

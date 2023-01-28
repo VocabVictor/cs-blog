@@ -41,13 +41,12 @@
       {{- $step := div $len $summarylines -}}
       {{- $start := 0 -}}
       {{- $end := add $start $step -}}
-      {{- if gt $summarylines 1 -}}
+      {{- if and (gt $summarylines 1) $step -}}
         {{- range seq 2 $summarylines -}}
           {{- $temp = printf "%v%v<br>" $temp ( slicestr $summary $start $end ) -}}
           {{- $start = $end -}}
           {{- $end = add $start $step -}}
         {{- end -}}
-        {{- $temp = printf "%v%v" $temp ( slicestr $summary $start $end ) -}}
         {{- $summary = $temp -}}
       {{- end -}}
       {{/*  把$summary的内容显示出来  */}}

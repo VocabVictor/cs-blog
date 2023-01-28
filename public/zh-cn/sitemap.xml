@@ -2,7 +2,7 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://cs-blog-beta.vercel.app/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/categories/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://cs-blog-beta.vercel.app/en/categories/"
@@ -15,7 +15,9 @@
           hreflang="zh-cn"
           href="https://cs-blog-beta.vercel.app/categories/"
           /></url><url>
-      <loc>https://cs-blog-beta.vercel.app/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/categories/nlp/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://cs-blog-beta.vercel.app/posts/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://cs-blog-beta.vercel.app/tags/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://cs-blog-beta.vercel.app/en/tags/"
@@ -28,7 +30,9 @@
           hreflang="zh-cn"
           href="https://cs-blog-beta.vercel.app/tags/"
           /></url><url>
-      <loc>https://cs-blog-beta.vercel.app/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+      <loc>https://cs-blog-beta.vercel.app/categories/%E5%AF%B9%E8%AF%9D/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://cs-blog-beta.vercel.app/tags/%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://cs-blog-beta.vercel.app/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
             rel="alternate"
             hreflang="en"
             href="https://cs-blog-beta.vercel.app/en/"
@@ -40,4 +44,5 @@
           rel="alternate"
           hreflang="zh-cn"
           href="https://cs-blog-beta.vercel.app/"
-          /></url></urlset>
+          /></url><url>
+      <loc>https://cs-blog-beta.vercel.app/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80/</loc><lastmod>2023-01-18T05:28:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
