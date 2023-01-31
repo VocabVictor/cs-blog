@@ -8,12 +8,12 @@
   <meta name="robots" content="noodp" />
   <title>生成多轮对话实践（一） - 山中书半</title><meta name="author" content="VocabVictor">
 <meta name="author-link" content="">
-<meta name="description" content="Hope you have a nice day!🍭🍭" /><meta name="keywords" content='多轮对话' /><meta itemprop="name" content="生成多轮对话实践（一）">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-18T05:28:40+08:00" />
+<meta name="description" content="语料简介 LCCC数据集（Large-sc" /><meta name="keywords" content='多轮对话' /><meta itemprop="name" content="生成多轮对话实践（一）">
+<meta itemprop="description" content="语料简介 LCCC数据集（Large-sc"><meta itemprop="datePublished" content="2023-01-18T05:28:40+08:00" />
 <meta itemprop="dateModified" content="2023-01-18T05:28:40+08:00" />
-<meta itemprop="wordCount" content="0"><meta itemprop="image" content="https://cs-blog-beta.vercel.app/logo.png"/>
+<meta itemprop="wordCount" content="3086"><meta itemprop="image" content="https://cs-blog-beta.vercel.app/logo.png"/>
 <meta itemprop="keywords" content="多轮对话," /><meta property="og:title" content="生成多轮对话实践（一）" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="语料简介 LCCC数据集（Large-sc" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cs-blog-beta.vercel.app/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80/" /><meta property="og:image" content="https://cs-blog-beta.vercel.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-18T05:28:40+08:00" />
@@ -22,11 +22,11 @@
 <meta name="twitter:image" content="https://cs-blog-beta.vercel.app/logo.png"/>
 
 <meta name="twitter:title" content="生成多轮对话实践（一）"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="语料简介 LCCC数据集（Large-sc"/>
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cs-blog-beta.vercel.app/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80/" /><link rel="stylesheet" href="/css/style.min.ec4f8df1a4059a053bb4f81418b023282df6fb04a305870d7363e88fb586c0a3.css" integrity="sha256-7E&#43;N8aQFmgU7tPgUGLAjKC32&#43;wSjBYcNc2Poj7WGwKM="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cs-blog-beta.vercel.app/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80/" /><link rel="next" href="https://cs-blog-beta.vercel.app/markdown%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0%E4%B8%80/" /><link rel="stylesheet" href="/css/style.min.b7b2d123a35cfeb8f4e36e0b1b5ed5b8a692887da83f776c0ce4d95f594eaf36.css" integrity="sha256-t7LRI6Nc/rj0424LG17VuKaSiH2oP3dsDOTZX1lOrzY="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/cs-blog-beta.vercel.app\/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80\/"
-    },"image": ["https:\/\/image-1304916025.cos.ap-nanjing.myqcloud.com\/85908de2c2b3d397.webp"],"genre": "posts","keywords": "多轮对话","wordcount":  0 ,
+    },"image": ["https:\/\/image-1304916025.cos.ap-nanjing.myqcloud.com\/85908de2c2b3d397.webp"],"genre": "posts","keywords": "多轮对话","wordcount":  3086 ,
     "url": "https:\/\/cs-blog-beta.vercel.app\/%E7%94%9F%E6%88%90%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AE%9E%E8%B7%B5%E4%B8%80\/","datePublished": "2023-01-18T05:28:40+08:00","dateModified": "2023-01-18T05:28:40+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -197,14 +197,15 @@
     </nav>
   </div>
 </header><main class="container"
-      data-page-style="normal"><aside class="toc" id="toc-auto"></aside>
+      data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     </aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>生成多轮对话实践（一）</span>
+        <span>生成多轮对话实践（一）</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -215,10 +216,166 @@
     alt="VocabVictor"
     title="VocabVictor"/> VocabVictor</span></span>
           <span class="post-category">收录于 <a href="/categories/nlp/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> NLP</a>&ensp;<a href="/categories/%E5%AF%B9%E8%AF%9D/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 对话</a></span></div>
-      <div class="post-meta-line"><span title=2023-01-18&#32;05:28:40><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-18">2023-01-18</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 0 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 0 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="生成多轮对话实践（一）">
+      <div class="post-meta-line"><span title=2023-01-18&#32;05:28:40><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-18">2023-01-18</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3086 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 7 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="生成多轮对话实践（一）">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
-    </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#语料简介">语料简介</a></li>
+    <li><a href="#数据格式">数据格式</a></li>
+    <li><a href="#模型设计">模型设计</a></li>
+    <li><a href="#训练细节">训练细节</a></li>
+    <li><a href="#对比分析">对比分析</a></li>
+    <li><a href="#文章总结">文章总结</a></li>
+    <li><a href="#参考文献">参考文献</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="语料简介">语料简介</h2>
+<p>LCCC数据集（Large-scale Cleaned Chinese Conversation）是一个大规模的中文对话数据集，由研究者提供并在Github上公开发布。该数据集包含了两个版本，分别为LCCC-base和LCCC-large。</p>
+<p>LCCC-base版本主要来源于微博对话，其中包含了3,354,382轮单轮对话和3,466,607轮多轮对话，总共6,708,554个对话语句。而LCCC-large版本在LCCC-base的基础上进行了融合，并加入了其他开源对话语料，其中包含了7,273,804轮单轮对话和4,733,955轮多轮对话，总共14,547,608个对话语句。具体的数据如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>LCCC版本</th>
+<th>单轮对话轮次</th>
+<th>多轮对话轮次</th>
+<th>总对话语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base</td>
+<td>3,354,382</td>
+<td>3,466,607</td>
+<td>6,708,554</td>
+</tr>
+<tr>
+<td>large</td>
+<td>7,273,804</td>
+<td>4,733,955</td>
+<td>14,547,608</td>
+</tr>
+</tbody>
+</table>
+<p>LCCC数据集经过了严格的清洗过程，其中包括了一系列手工规则和基于机器学习算法构建的分类器，来确保对话数据的质量。在清洗过程中，过滤了脏字脏词、特殊字符、颜表情、语法不通的语句、上下文不相关的对话等噪声。</p>
+<p>该数据集已经被广泛使用，用于训练多轮对话模型，并在相关领域取得了良好的研究成果。</p>
+<h2 id="数据格式">数据格式</h2>
+<p>为了简化任务，所有样本都被处理成双人对话。下面是一些样本示例：</p>
+<blockquote>
+<p>A: 等过年咱们回去买点兔头好好吃顿火锅</p>
+<p>B: 太原就没看见有好吃的兔头</p>
+<p>A: 我从虹桥给你带个回去那天瞅到一正宗的</p>
+<p>B: 最爱你了</p>
+<p>A: 那是必须</p>
+<p>A: 嗯嗯，我再等等！你现在在上海吧？上海风好像比南京还大呢，少出门吧</p>
+<p>B: 对啊，我在家，没事儿。一定要小心啊！</p>
+<p>A: 我去年也去转了一圈，还碰见以前的体育老师了，合了个影</p>
+<p>B: 哈哈我还去找高一时侯的英语老师没找到她刚好有事情没在学校～</p>
+<p>A: 你也是真心找回忆了哦</p>
+<p>B: 哈哈毕业了没去过想去看看啊</p>
+</blockquote>
+<h2 id="模型设计">模型设计</h2>
+<p>在了解数据特征后，我们需要进行模型设计。显然，我们的目的是训练一个模型来预测下一个应该回复的内容。由于语料中包含了多轮对话，因此我们还需要要求这个模型能够支持多轮对话。</p>
+<p>考虑到对话历史的最简单方式是将直到当前句的所有历史对话拼接成单句文本作为模型的输入信息。从形式上来看，我们应该使用Seq2Seq模型来完成这个任务。然而，直接使用Seq2Seq模型可能会有一些问题。标准的Seq2Seq模型通常用于形式比较固定的输入输出，如输入文本长度应该集中在某个范围内，不宜变化太大。考虑到多轮对话，理论上我们不知道前面有多少轮对话，因此原则上输入文本长度是无限制的。此外，使用Seq2Seq模型还存在训练效率低的问题。</p>
+<p>因此，我们需要一个长度能相当自由地变化的、同时能预测整一个多轮对话的模型。实现这个需求的比较适当的选择就是单向语言模型（LM、GPT），做法如下图：</p>
+<p><a href="https://kexue.fm/usr/uploads/2020/09/603395458.png"target="_blank" rel="external nofollow noopener noreferrer"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-603395458.png"
+    data-srcset="https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-603395458.png, https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-603395458.png 1.5x, https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-603395458.png 2x"
+    data-sizes="auto"
+    alt="利用单向语言模型做多轮对话示意图"
+    title="利用单向语言模型做多轮对话示意图"/></a></p>
+<p>如图所示，我们选择当前主流的Transformer模型，按照BERT的常规输入格式，将每句对话用[SEP]拼接起来，然后就训练一个从左往右的单向语言模型。为了区分不同的说话角色，我们对不同的说话者用不同的Segment Id区分。此外，考虑到BERT和GPT都是用了绝对位置编码，可处理的文本长度存在一个上限，而对话轮数理论上是无限的，所以这里我们采用了相对位置编码的NEZHA作为基本结构，并使用NEZHA的预训练权重作为模型的初始化权重。</p>
+<p>说白了，就是往NEZHA里边加入了下三角形式的Attention Mask，使其变为一个语言模型，相关介绍请参考<a href="https://kexue.fm/archives/6933"target="_blank" rel="external nofollow noopener noreferrer">《从语言模型到Seq2Seq：Transformer如戏，全靠Mask》</a>。</p>
+<h2 id="训练细节">训练细节</h2>
+<p>首先，给出笔者的参考实现以及训练好的模型：</p>
+<blockquote>
+<p><a href="https://github.com/bojone/nezha_gpt_dialog"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/bojone/nezha_gpt_dialog</a></p>
+</blockquote>
+<p>代码基于bert4keras实现，基本结构是NEZHA Base。为了使得训练更加“平民化”，笔者只用了一张卡（22G的RTX）配合梯度累积来训练，显存不够大的读者可以缩小batch_size。开源的模型是用2×10−52×10−5的学习率、0.010.01的权重衰减率的Adam优化器进行训练的，训练了1000万步（20多天），单步batch_size为16，累积梯度步数为16，所以相当于以256的batch_size训练了62.5万步，最终的loss大概是2.83（平均每token的交叉熵）。</p>
+<p>我们来测试一下我们的训练结果。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">火锅好吃啊</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">我也是</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">哈哈哈哈哈哈我最近一周吃了两顿火锅</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">我也是</span><span class="err">，</span><span class="n">每次都吃的撑</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">吃火锅不长胖</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">火锅好啊</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">你们那边有这种火锅</span><span class="err">？</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">火锅好吃吗</span><span class="err">？</span><span class="n">我也想吃</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">吃吧</span><span class="err">，</span><span class="n">吃了就开心了</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">我也想天天吃火锅</span><span class="err">！</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;我最近天天吃火锅&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">火锅吃不了多久的</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;你那天气好吗&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">还好</span><span class="err">，</span><span class="n">不热</span><span class="err">，</span><span class="n">有点冷</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">chatbot</span><span class="o">.</span><span class="n">response</span><span class="p">([</span><span class="sa">u</span><span class="s1">&#39;你那天气好吗&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;还好，不热，有点冷&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;那你得穿多厚的衣服&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="n">我穿了两件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="对比分析">对比分析</h2>
+<p>CDial-GPT也开源了自己训练的预训练模型，笔者也将它转换为bert4keras能加载的格式了（<a href="https://github.com/bojone/CDial-GPT-tf"target="_blank" rel="external nofollow noopener noreferrer">CDial-GPT-tf</a>），读者也可以测试比对一下。从训练上来看，CDial-GPT使用pytorch实现的模型，基本结构是GPT Base，使用了4张2080Ti，总batch_size为32，累积梯度64步，论文说训练了30个epoch，总步数约2100万步（笔者的两倍），因此大概相当于batch_size为2048训练了33万步。</p>
+<p>在输入设计上，CDial-GPT也有所不同，如下图：</p>
+<p><a href="https://kexue.fm/usr/uploads/2020/09/727199313.png"target="_blank" rel="external nofollow noopener noreferrer"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-727199313.png"
+    data-srcset="https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-727199313.png, https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-727199313.png 1.5x, https://image-1304916025.cos.ap-nanjing.myqcloud.com/typora-727199313.png 2x"
+    data-sizes="auto"
+    alt="CDial-GPT模型示意图"
+    title="CDial-GPT模型示意图"/></a></p>
+<p>如图所示，CDial-GPT跟我们前述设计的主要不同是多轮对话之间的拼接方式，我们之前是直接用[SEP]连接，它是用[speaker1]、[speaker2]（图中简记为S1、S2）这样的角色标记来连接，最后才用一个[SEP]表示回复结束。这样一来，由于预测部分的格式跟历史的格式不一样，因此每次只能训练一句回复，多轮对话要拆分为多个样本来训练，理论上是增加了训练复杂性的（要训练多步才能把一个多轮对话样本训练完）。</p>
+<p>至于效果上，个人测试的感觉是两者没什么明显差别。有兴趣的读者也可以自行比较测试。</p>
+<h2 id="文章总结">文章总结</h2>
+<p>本文主要分享了一次对话模型实践，基于CDial-GPT开源的LCCC闲聊语料库，利用语言模型（GPT）对多轮对话进行生成式建模，得到了一个相对通用的闲聊对话模型，最后将本文的思路与CDial-GPT本身开源的模型进行了比较。</p>
+<h2 id="参考文献">参考文献</h2>
+<p>[1] <a href="https://arxiv.org/abs/2009.00300"target="_blank" rel="external nofollow noopener noreferrer">CDial-GPT: A Large-Scale Pretrained Language Model for Chinese Conversation Generation</a></p>
+</div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -250,7 +407,8 @@
     </section>
   </div>
 
-  <div class="post-nav"></div>
+  <div class="post-nav">
+      <a href="/markdown%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0%E4%B8%80/" class="post-nav-item" rel="next" title="Markdown语法笔记（一）">Markdown语法笔记（一）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div class="post-reward">
     <div class="comment">Buy me a coffee</div>
@@ -278,7 +436,7 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/hugo-fixit/FixIt" title="在 GitHub 上查看源代码"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/green/pace-theme-barber-shop.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/zoom/lg-zoom.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/mhchem.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cell-watermark@1.0.3/src/watermark.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" async defer></script><script src="/js/cursor.0f1a37b499082732aec9d386eaf4e658cb02b227baa8b19578376cbca74e4067.js" integrity="sha256-Dxo3tJkIJzKuydOG6vTmWMsCsie6qLGVeDdsvKdOQGc=" defer></script><script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" defer></script><script src="/js/recent_posts.eee3aab1dea8c9fd7e05f4bf35074efecdfa78eebc65b2064a676f58727df34d.js" integrity="sha256-7uOqsd6oyf1+BfS/NQdO/s36eO68ZbIGSmdvWHJ9800=" defer></script><script src="/js/sun_moon.f12a9626305b733af80e13d7a6589e97ca3835cfe83e33143669234f7305a151.js" integrity="sha256-8SqWJjBbczr4DhPXpliel8o4Nc/oPjMUNmkjT3MFoVE=" defer></script><script src="/js/universe.3b714b9055cefdf0dbdb70c86eec31acc43e352ec71b1a2950ac1fd43a1bb8de.js" integrity="sha256-O3FLkFXO/fDb23DIbuwxrMQ+NS7HGxopUKwf1DobuN4=" defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"VocabVictor/cs-blog"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"twemoji":true,"watermark":{"appendto":".wrapper\u003emain","colspacing":30,"content":"","enable":true,"fontfamily":"inherit","fontsize":0.85,"height":20,"opacity":0.05,"rotate":15,"rowspacing":60,"width":150}};</script><script src="/js/theme.min.82fa6b2f98f173847d89e56150f7480a61c125b301dcccc0f5ad500a083f3a5a.js" integrity="sha256-gvprL5jxc4R9ieVhUPdICmHBJbMB3MzA9a1QCgg/Olo=" defer></script></body>
+</div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/green/pace-theme-barber-shop.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/zoom/lg-zoom.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/mhchem.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cell-watermark@1.0.3/src/watermark.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" async defer></script><script src="/js/cursor.0f1a37b499082732aec9d386eaf4e658cb02b227baa8b19578376cbca74e4067.js" integrity="sha256-Dxo3tJkIJzKuydOG6vTmWMsCsie6qLGVeDdsvKdOQGc=" defer></script><script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" defer></script><script src="/js/recent_posts.eee3aab1dea8c9fd7e05f4bf35074efecdfa78eebc65b2064a676f58727df34d.js" integrity="sha256-7uOqsd6oyf1+BfS/NQdO/s36eO68ZbIGSmdvWHJ9800=" defer></script><script src="/js/sun_moon.f12a9626305b733af80e13d7a6589e97ca3835cfe83e33143669234f7305a151.js" integrity="sha256-8SqWJjBbczr4DhPXpliel8o4Nc/oPjMUNmkjT3MFoVE=" defer></script><script src="/js/universe.3b714b9055cefdf0dbdb70c86eec31acc43e352ec71b1a2950ac1fd43a1bb8de.js" integrity="sha256-O3FLkFXO/fDb23DIbuwxrMQ+NS7HGxopUKwf1DobuN4=" defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"VocabVictor/cs-blog"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"twemoji":true,"watermark":{"appendto":".wrapper\u003emain","colspacing":30,"content":"","enable":true,"fontfamily":"inherit","fontsize":0.85,"height":20,"opacity":0.05,"rotate":15,"rowspacing":60,"width":150}};</script><script src="/js/theme.min.f113eb120ad05328772033acfac5d09b5175ec3892adbc5f0dd5917cb11a3395.js" integrity="sha256-8RPrEgrQUyh3IDOs+sXQm1F17DiSrbxfDdWRfLEaM5U=" defer></script></body>
 
 </html>
 <style>

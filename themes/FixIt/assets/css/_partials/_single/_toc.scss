@@ -51,20 +51,25 @@
   display: block;
   position: sticky;
   top: $header-height + 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
+  margin-left: 1rem;
   @include overflow-wrap(break-word);
   box-sizing: border-box;
   visibility: hidden;
-
   @include blur;
 
+  height: fit-content;
+  background-color: rgba($color:$global-background-color , $alpha: 1.0);
+  border-radius: $tip-border-radius;
+  [data-theme="dark"] & {
+    background-color: rgba($color:$global-background-color-dark , $alpha: 1.0);
+  }
+  
   .toc-title {
     margin: 0.5rem 0;
     cursor: pointer;
 
     &::before {
-      content: '|';
       font-weight: bolder;
       margin-right: 0.5rem;
       color: $global-border-color;

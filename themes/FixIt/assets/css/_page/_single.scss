@@ -318,10 +318,15 @@
 
     blockquote {
       display: block;
-      border-left: 0.25em solid $global-border-color;
+      border-left: 0.25em solid $theme-color;
       color: $blockquote-color;
-      padding: 0 1em;
+      padding: 0.5em;
       margin: 1rem 0;
+      background-color: $global-background-color-dark;
+
+      p{
+        text-indent: 1em !important;
+      }
 
       ul,
       ol {
@@ -330,7 +335,8 @@
 
       [data-theme='dark'] & {
         color: $blockquote-color-dark;
-        border-left-color: $global-border-color-dark;
+        border-left-color: $theme-color;
+        background-color: $global-background-color;
       }
 
       @include link(false, true);

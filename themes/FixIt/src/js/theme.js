@@ -600,14 +600,6 @@ class FixIt {
     });
   }
 
-  initHeaderLink() {
-    for (let num = 1; num <= 6; num++) {
-      this.util.forEach(document.querySelectorAll('.single .content > h' + num), ($header) => {
-        $header.classList.add('header-link');
-        $header.insertAdjacentHTML('afterbegin', `<a href="#${$header.id}" class="header-mark"></a>`);
-      });
-    }
-  }
   /**
    * init table of contents
    */
@@ -1067,7 +1059,6 @@ class FixIt {
         this.initLightGallery();
         this.initHighlight();
         this.initTable();
-        this.initHeaderLink();
         this.initMath();
         this.initMermaid();
         this.initEcharts();
@@ -1248,7 +1239,6 @@ class FixIt {
         this.initLightGallery();
         this.initHighlight();
         this.initTable();
-        this.initHeaderLink();
         this.initMath();
         this.initMermaid();
         this.initEcharts();

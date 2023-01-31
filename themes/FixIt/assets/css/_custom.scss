@@ -82,6 +82,105 @@
   }
 
   // =================================================================================
+  /* 文章页H1-H6图标样式效果 */
+  /* 控制风车转动速度 4s那里可以自己调节快慢 */
+  /* 控制风车转动方向 -1turn 为逆时针转动，1turn 为顺时针转动，相同数字部分记得统一修改 */
+  @-webkit-keyframes ccc {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(-1turn);
+      transform: rotate(-1turn);
+    }
+  }
+  @keyframes ccc {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(-1turn);
+      transform: rotate(-1turn);
+    }
+  }
+
+  h1::before,
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
+    display: inline-block;
+    font-family: "fontawesome";
+    margin-right: 0.5rem;
+    content: "\f863";
+    -webkit-animation: ccc 2s linear infinite;
+    animation: ccc 2s linear infinite;
+  }
+
+  #content {
+
+    p {
+      text-indent: 2em;
+      a{
+
+        color: $blockquote-color;
+
+        [data-theme="dark"] & {
+          color: $blockquote-color-dark;
+        }
+
+        &:hover {
+          color: $theme-color;
+        }
+      }
+
+      a:has(> img) {
+        display: flex;
+      }
+      
+    }
+
+    /* 设置风车颜色 */
+    h1::before {
+      color: #ef50a8;
+      font-size: 1.3rem;
+    }
+
+    h2::before {
+      color: #fb7061;
+      font-size: 1.1rem;
+    }
+
+    h3::before {
+      color: #ffbf00;
+      font-size: 0.95rem;
+    }
+
+    h4::before {
+      color: #a9e000;
+      font-size: 0.8rem;
+    }
+
+    h5::before {
+      color: #00b0ff;
+      font-size: 0.7rem;
+    }
+
+    h6::before {
+      color: #a9e000;
+      font-size: 0.6rem;
+    }
+
+    h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover {
+      position: relative;
+      color: $theme-color;
+    }
+  }
+
+  // =================================================================================
   /* 背景宇宙星光  */
   #universe {
     display: block;
@@ -99,18 +198,6 @@
     z-index: -1;
   }
 
-  // =================================================================================
-  /* 文章页H1-H6图标样式效果 */
-  /* 控制风车转动速度 4s那里可以自己调节快慢 */
-  h1::before,
-  h2::before,
-  h3::before,
-  h4::before,
-  h5::before,
-  h6::before {
-    -webkit-animation: ccc 4s linear infinite;
-    animation: ccc 4s linear infinite;
-  }
 }
 
 // ===================================================================================================
@@ -150,23 +237,27 @@
 // ===================================================================================================
 /* 日间模式不生效 */
 
-.header-title,.home-title,.home-subtitle{
+.header-title,
+.home-title,
+.home-subtitle {
   [data-theme="light"] & {
     animation: none;
   }
 }
 
-.single-title.animate__animated.animate__flipInX{
+.single-title.animate__animated.animate__flipInX {
   [data-theme="light"] & {
     animation: none;
   }
+
   [data-theme="dark"] & {
     animation: light_15px 10s linear infinite;
   }
 }
 
 /* 夜间模式生效 */
-.header-title,.home-title{
+.header-title,
+.home-title {
   [data-theme="dark"] & {
     animation: light_15px 10s linear infinite;
   }
@@ -311,94 +402,94 @@
 
 .Cuteen_DarkSky,
 .Cuteen_DarkSky:before {
-    content: '';
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 88888888;
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 88888888;
 }
 
 .Cuteen_DarkSky {
-    background: linear-gradient(to top, #f8cd71 0, #5bfde9 80%);
+  background: linear-gradient(to top, #f8cd71 0, #5bfde9 80%);
 }
 
 .Cuteen_DarkSky:before {
-    transition: 2s ease all;
-    opacity: 0;
-    background: linear-gradient(to top, #30cfd0 0, #330867 100%);
+  transition: 2s ease all;
+  opacity: 0;
+  background: linear-gradient(to top, #30cfd0 0, #330867 100%);
 }
 
 .DarkMode .Cuteen_DarkSky:before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .Cuteen_DarkPlanet {
-    z-index: 99999999;
-    position: fixed;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    -webkit-animation: CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1);
-    animation: CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1);
-    transform-origin: center bottom;
+  z-index: 99999999;
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  -webkit-animation: CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1);
+  animation: CuteenPlanetMove 2s cubic-bezier(0.7, 0, 0, 1);
+  transform-origin: center bottom;
 }
 
 @-webkit-keyframes CuteenPlanetMove {
-    0% {
-        transform: rotate(0);
-    }
+  0% {
+    transform: rotate(0);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes CuteenPlanetMove {
-    0% {
-        transform: rotate(0);
-    }
+  0% {
+    transform: rotate(0);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .Cuteen_DarkPlanet #sun {
-    position: absolute;
-    border-radius: 100%;
-    left: 44%;
-    top: 30%;
-    height: 6rem;
-    width: 6rem;
-    background: #ffee94;
-    box-shadow: 0 0 40px #ffee94;
+  position: absolute;
+  border-radius: 100%;
+  left: 44%;
+  top: 30%;
+  height: 6rem;
+  width: 6rem;
+  background: #ffee94;
+  box-shadow: 0 0 40px #ffee94;
 }
 
 .Cuteen_DarkPlanet #moon {
-    position: absolute;
-    border-radius: 100%;
-    left: 44%;
-    top: 30%;
-    position: absolute;
-    border-radius: 100%;
-    height: 6rem;
-    width: 6rem;
-    box-shadow: -1.8em 1.8em 0 0.2em #fff;
+  position: absolute;
+  border-radius: 100%;
+  left: 44%;
+  top: 30%;
+  position: absolute;
+  border-radius: 100%;
+  height: 6rem;
+  width: 6rem;
+  box-shadow: -1.8em 1.8em 0 0.2em #fff;
 }
 
 .search span {
-    display: none;
+  display: none;
 }
 
 .menus_item a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 
 // ===================================================================================================
 .wrapper:has(.single) #web_bg {
-    display: none;
+  display: none;
 }

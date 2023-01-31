@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta name="robots" content="noodp" />
+  <title>Anaconda使用教程（一） - 山中书半</title><meta name="author" content="VocabVictor">
+<meta name="author-link" content="">
+<meta name="description" content="Hope you have a nice day!🍭🍭" /><meta name="keywords" content='AI工具' /><meta itemprop="name" content="Anaconda使用教程（一）">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-29T01:47:51+08:00" />
+<meta itemprop="dateModified" content="2023-01-29T01:47:51+08:00" />
+<meta itemprop="wordCount" content="2439"><meta itemprop="image" content="https://cs-blog-beta.vercel.app/logo.png"/>
+<meta itemprop="keywords" content="AI工具," /><meta property="og:title" content="Anaconda使用教程（一）" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" /><meta property="og:image" content="https://cs-blog-beta.vercel.app/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-29T01:47:51+08:00" />
+<meta property="article:modified_time" content="2023-01-29T01:47:51+08:00" /><meta property="og:site_name" content="山中书半" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cs-blog-beta.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="Anaconda使用教程（一）"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" /><link rel="prev" href="https://cs-blog-beta.vercel.app/%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E6%95%B0%E6%8D%AE%E9%9B%86-lccc/" /><link rel="next" href="https://cs-blog-beta.vercel.app/python%E7%88%AC%E8%99%AB%E6%95%99%E7%A8%8B%E4%B8%80/" /><link rel="stylesheet" href="/css/style.min.b7b2d123a35cfeb8f4e36e0b1b5ed5b8a692887da83f776c0ce4d95f594eaf36.css" integrity="sha256-t7LRI6Nc/rj0424LG17VuKaSiH2oP3dsDOTZX1lOrzY="><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Anaconda使用教程（一）",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/cs-blog-beta.vercel.app\/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80\/"
+    },"image": ["https:\/\/image-1304916025.cos.ap-nanjing.myqcloud.com\/85908de2c2b3d397.webp"],"genre": "posts","keywords": "AI工具","wordcount":  2439 ,
+    "url": "https:\/\/cs-blog-beta.vercel.app\/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80\/","datePublished": "2023-01-29T01:47:51+08:00","dateModified": "2023-01-29T01:47:51+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "VocabVictor"
+      },"description": ""
+  }
+  </script></head>
+
+<body data-header-desktop="sticky"
+  data-header-mobile="auto"><script>
+    (
+      window.localStorage?.getItem('theme') ?
+        localStorage.getItem('theme') === 'dark' :
+        ('auto' === 'auto' ?
+          window.matchMedia('(prefers-color-scheme: dark)').matches :
+          'auto' === 'dark'
+        )
+    ) && document.body.setAttribute('data-theme', 'dark');
+  </script><div class="wrapper">
+    <div id="web_bg">
+      <svg aria-hidden='true' style='position:absolute; overflow:hidden; width:0; height:0'>
+        <symbol id='icon-sun' viewBox='0 0 1024 1024'>
+          <path
+            d='M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z'
+            fill='#FFD878' p-id='8420' />
+          <path d='M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z' fill='#FFE4A9' p-id='8421' />
+          <path
+            d='M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z'
+            fill='#4D5152' p-id='8422' />
+          <path
+            d='M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z'
+            fill='#4D5152' p-id='8423' />
+        </symbol>
+        <symbol id='icon-moon' viewBox='0 0 1024 1024'>
+          <path
+            d='M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z'
+            fill='#FFB531' p-id='11345' />
+          <path
+            d='M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z'
+            fill='#030835' p-id='11346' />
+        </symbol>
+      </svg>
+    </div>
+    <canvas id="universe"></canvas><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper" 
+    data-github-corner="right" >
+    <div class="header-title">
+      <a href="/" title="山中书半"><span class="header-title-pre"><i class='fa fa-paw faa-shake animated-hover faa-slow'></i></span><span class="header-title-text">山中书半</span><span class="header-title-post"><i class='fa fa-paw faa-shake animated-hover faa-slow'></i></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu myheader"><li
+          class="menu-item">
+          <a class="menu-link" href="/"  >首页</a></li><li
+          class="menu-item has-children">
+          <a class="menu-link" href="/"  >文章</a><i class="hasChildren dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+          <ul class="sub-menu">
+            <li
+              class="menu-item">
+              <a class="menu-link" href="/categories/"  >分类</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="/posts/"  >归档</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="/tags/"  >标签</a>
+            </li></ul></li><li
+          class="menu-item">
+          <a class="menu-link" href="/"  >休闲</a></li><li
+          class="menu-item">
+          <a class="menu-link" href="/"  >八宝箱</a></li><li
+          class="menu-item">
+          <a class="menu-link" href="/"  >网站</a></li><li
+          class="menu-item">
+          <a class="menu-link" href="/"  >个人</a></li><li
+          class="menu-item has-children">
+          <a class="menu-link" href="/"  >线路</a><i class="hasChildren dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+          <ul class="sub-menu">
+            <li
+              class="menu-item">
+              <a class="menu-link" href="https://blog.hzxwhzxw.asia/"  rel="noopener noreferrer" target="_blank" >腾讯云</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="https://vocabvictor.github.io/cs-blog/"  rel="noopener noreferrer" target="_blank" >Github</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="/"  >Vercel</a>
+            </li></ul></li></ul>
+    </nav>
+    <nav>
+      <ul class="menu"><li class="menu-item language">
+          <span role="button" aria-label="" title="">简体中文<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </span>
+          <ul class="sub-menu"><li class="menu-item">没有更多翻译</li></ul>
+        </li><li class="menu-item theme-switch" title="">
+          
+          <a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换"
+          id="nightmode-button" data-pjax-state="external">
+          <svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px"
+              viewBox="0 0 1024 1024">
+              <use id="modeicon" xlink:href="#icon-sun"></use>
+          </svg>
+      </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="山中书半"><span class="header-title-pre"><i class='fa fa-paw faa-shake animated-hover faa-slow'></i></span><span class="header-title-text">山中书半</span><span class="header-title-post"><i class='fa fa-paw faa-shake animated-hover faa-slow'></i></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+          class="menu-item"><a class="menu-link" href="/"  >首页</a></li><li
+          class="menu-item"><span class="nested-item">
+            <a class="menu-link" href="/"  >文章</a>
+            <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </span>
+          <ul class="sub-menu">
+            <li
+              class="menu-item">
+              <a class="menu-link" href="/categories/"  >分类</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="/posts/"  >归档</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="/tags/"  >标签</a>
+            </li></ul></li><li
+          class="menu-item"><a class="menu-link" href="/"  >休闲</a></li><li
+          class="menu-item"><a class="menu-link" href="/"  >八宝箱</a></li><li
+          class="menu-item"><a class="menu-link" href="/"  >网站</a></li><li
+          class="menu-item"><a class="menu-link" href="/"  >个人</a></li><li
+          class="menu-item"><span class="nested-item">
+            <a class="menu-link" href="/"  >线路</a>
+            <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </span>
+          <ul class="sub-menu">
+            <li
+              class="menu-item">
+              <a class="menu-link" href="https://blog.hzxwhzxw.asia/"  rel="noopener noreferrer" target="_blank" >腾讯云</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="https://vocabvictor.github.io/cs-blog/"  rel="noopener noreferrer" target="_blank" >Github</a>
+            </li><li
+              class="menu-item">
+              <a class="menu-link" href="/"  >Vercel</a>
+            </li></ul></li><li class="menu-item theme-switch" title="">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li><li class="menu-item language">
+          <span role="button" aria-label="" title="">简体中文<i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </span>
+          <select class="language-select" onchange="location = this.value;"><option disabled>没有更多翻译</option></select>
+        </li></ul>
+    </nav>
+  </div>
+</header><main class="container"
+      data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span title="转载" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Anaconda使用教程（一）</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/ae4cdbde9d46885b7df28d3323f5251a?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/ae4cdbde9d46885b7df28d3323f5251a?s=32&amp;d=, https://gravatar.loli.net/avatar/ae4cdbde9d46885b7df28d3323f5251a?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/ae4cdbde9d46885b7df28d3323f5251a?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="VocabVictor"
+    title="VocabVictor"/> VocabVictor</span></span>
+          <span class="post-category">收录于 <a href="/categories/ai%E5%B7%A5%E5%85%B7/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI工具</a></span></div>
+      <div class="post-meta-line"><span title=2023-01-29&#32;01:47:51><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-29">2023-01-29</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2439 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 5 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Anaconda使用教程（一）">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#anaconda安装">Anaconda安装</a>
+      <ul>
+        <li><a href="#anaconda简介">Anaconda简介</a></li>
+        <li><a href="#anaconda安装情况的选择">Anaconda安装情况的选择</a>
+          <ul>
+            <li><a href="#情况一">情况一</a>
+              <ul>
+                <li><a href="#anaconda的下载">Anaconda的下载</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#anacoda环境创建">Anacoda环境创建</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="anaconda安装">Anaconda安装</h2>
+<h3 id="anaconda简介">Anaconda简介</h3>
+<p>Anaconda包括Conda、Python以及一大堆安装好的工具包，比如：numpy、pandas等</p>
+<p>因此安装Anaconda的好处主要为以下几点：</p>
+<p>1）包含conda：conda是一个环境管理器，其功能依靠conda包来实现，该环境管理器与pip类似，那有童鞋会问了：我能通过pip装conda包达到conda环境管理器一样的功能吗？答案是不能，conda包的实现离不开conda环境管理器。想详细知道两者异同可以去知乎遛一遛https://www.zhihu.com/question/279152320</p>
+<p>2）安装大量工具包：Anaconda会自动安装一个基本的python，该python的版本Anaconda的版本有关。该python下已经装好了一大堆工具包，这对于科学分析计算是一大便利，你愿意费时耗力使用pip一个个包去装吗？</p>
+<p>3）可以创建使用和管理多个不同的Python版本：比如想要新建一个新框架或者使用不同于Anoconda装的基本Python版本，Anoconda就可以实现同时多个python版本的管理</p>
+<h3 id="anaconda安装情况的选择">Anaconda安装情况的选择</h3>
+<p>Anaconda的安装分两种情况：</p>
+<p>情况一：电脑现在没有装python或者现在装的可以卸载掉（装Anaconda时先卸python）；</p>
+<p>情况二：电脑目前装了python，但想保留它；</p>
+<h4 id="情况一">情况一</h4>
+<h5 id="anaconda的下载">Anaconda的下载</h5>
+<p>你可以根据你的操作系统是32位还是64位选择对应的版本到官网下载，但是官网下载龟速，建议到清华大学镜像站下载，多快又好省，博主使用的版本是：</p>
+<p>Anaconda3-5.2.0-Windows-x86_64.exe</p>
+<p>为什么不用最新版的</p>
+<p>Anaconda3-5.3.1-Windows-x86_64.exe</p>
+<p>不知是版本原因还是什么原因，包括博主在内的一大堆使用这个最新版本在构建虚拟环境或者安装包时出现了这样蛋疼的错误</p>
+<p>无法定位程序输入点 OPENSSL_sk_new_reserve 于动态链接库 E：\ProgramData\Anaconda3\Library\bin\libssl-1_1-x64.dll上</p>
+<p>最后有博文指出回退3-5.2.0版本毛事木有</p>
+<p>下载好Anaconda3后直接双击安装包即可，有几个地方需要注意</p>
+<p>Finish后安装完毕</p>
+<p>2.1.2 测试安装
+cmd输入</p>
+<p>conda &ndash;version
+若出现像这样的conda版本号即安装成功</p>
+<p>2.1.3 更改源
+使用</p>
+<p>conda install 包名
+安装需要的Python包非常方便，但是官方服务器在国外，下载龟速，国内清华大学提供了Anaconda的镜像仓库，我们把源改为清华大学镜像源</p>
+<p>更改方法一：cmd后依次输入下面命令</p>
+<p>conda config &ndash;add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/"target="_blank" rel="external nofollow noopener noreferrer">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</a>
+conda config &ndash;set show_channel_urls yes
+打开C盘用户目录，我这里是</p>
+<p>C:\Users\User
+找到.condarc文件，里面长这样就成了</p>
+<p>ssl_verify: true
+channels:</p>
+<ul>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/"target="_blank" rel="external nofollow noopener noreferrer">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a></li>
+<li>defaults
+show_channel_urls: true</li>
+</ul>
+<p>更改方法二：打开 .condarc文件，直接简单粗暴的把上面的内容复制进去</p>
+<p>2.1.4 更新包
+更新时间较长，建议找个空余时间更新,不更新也可以，但为避免后续安装其他东西出错最好更一下，这里我就不更了，把命令贴出来</p>
+<p>先更新conda</p>
+<p>conda update conda
+再更新第三方所有包</p>
+<p>conda upgrade &ndash;all
+2.1.5 创建和管理虚拟环境
+第一种情况下Anaconda的安装到这里基本就结束了，后面关于虚拟环境部分属于Anaconda的使用了，这里会在第二种情况下再做介绍</p>
+<p>2.2 情况二
+情况二Anaconda的安装和情况一相同，但为保留自己安装的Python需要在安装Anaconda完成后进行操作</p>
+<p>进行操作有2个方法，这里更加推荐方法二</p>
+<p>2.2.1 方法一：通过更改python.exe文件名
+Anaconda安装时会自带一个Python，没装之前我们先看看电脑里Python的版本（姑且称为原生python），cmd后输入：</p>
+<p>python &ndash;version 或者 python -V</p>
+<p>这里显示原生python版本是3.7.4，我们到环境变量去看是这样的</p>
+<p>C:\ProgramFiles\Python37\Scripts;
+C:\ProgramFiles\Python37;
+%SystemRoot%\system32;
+%SystemRoot%;
+%SystemRoot%\System32\Wbem;
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0;
+C:\Program Files\PuTTY<br>
+按照第一种情况安装Anoconda后再输入</p>
+<p>python &ndash;version</p>
+<p>这时显示的是3.6.5，这里的版本就是Anaconda自带的python版本，我们再打开环境变量</p>
+<p>C:\ProgramData\Anaconda3;
+C:\ProgramData\Anaconda3\Library\mingww64\bin;
+C:\ProgramData\Anaconda3\Library\usr\bin;
+C:\ProgramData\Anaconda3\Library\bin;
+C:\ProgramData\Anaconda3\Scripts;
+C:\ProgramFiles\Python37\Scripts;
+C:\ProgramFiles\Python37;
+%SystemRoot%\system32;
+%SystemRoot%;
+%SystemRoot%\System32\Wbem;
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0;
+C:\Program Files\PuTTY<br>
+发现原生Python路径还在，同时在原生Python路径之前多了与Anaconda相关的路径，因此Anaconda自带安装的Python并不会覆盖掉原生Python，但为什么输python &ndash;version显示的是Anaconda的版本而不是原生的呢？这是因为环境变量优先级的缘故，这里Anaconda在前，原生在后，更改他们的顺序后输入python &ndash;version可以得到原生的版本号，有兴趣的童鞋可以自己尝试。</p>
+<p>C:\Program Files\Python37;
+C:\ProgramFiles\Python37\Scripts;
+C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingww64\bin;
+C:\ProgramData\Anaconda3\Library\usr\bin;
+C:\ProgramData\Anaconda3\Library\bin;
+C:\ProgramData\Anaconda3\Scripts;
+%SystemRoot%\system32;
+%SystemRoot%;
+%SystemRoot%\System32\Wbem;
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0;
+C:\Program Files\PuTTY\</p>
+<p>因此方法一来了，把原生python安装路径下的python.exe改为python_ori.exe</p>
+<p>再把Anaconda安装路径下的python.exe改为python_ana.exe</p>
+<p>查看版本：</p>
+<p>使用时要注意区分，如进行pip安装时</p>
+<p>python_ori –m pip install 包名</p>
+<p>python_ano –m pip install 包名</p>
+<p>2.2.2 方法二：通过切换虚拟环境
+输入</p>
+<p>conda info -e  或者  conda-env list
+查看Anaconda中当前存在的环境</p>
+<p>可以看到当前只存在一个叫做base的环境，这个环境即是Anaconda安装的Python版本</p>
+<p>Anaconda装的版本是3.6.5的，假如我们想使用2.7版本的，这时可以通过创建虚拟环境来实现，输入</p>
+<p>conda create -n python27 python=2.7
+不用管是输入2.7.x，还是2.7，conda会为我们自动寻找2.7.x中的最新版本，再次查看Anaconda中存在的环境</p>
+<p>发现较之前多了一个python27，我们到Anaconda安装目录查看envs文件夹下的python27</p>
+<p>点进去看发现这不就是一个python安装过后的文件吗，说是创建虚拟环境，其实是真实的安装了Python2.7，我们切换至2.7版本的，输入</p>
+<p>activate python27
+切换成功后前面多一个python27</p>
+<p>这时我们保留原生python就有了思路：</p>
+<p>1）在Anaconda安装目录下的envi文件内新建一个名为python_ori的文件（没有envs文件夹就自己新建）</p>
+<p>2）将原生python整个安装目录复制python_ori</p>
+<p>3）全部复制后粘贴到python_ori</p>
+<p>4）cmd后激活切换至原生的python</p>
+<p>查询版本号</p>
+<p>没问题，3.7.4是原生版本，那是那个味哈哈。</p>
+<h2 id="anacoda环境创建">Anacoda环境创建</h2></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-01-29&#32;01:47:51>更新于 2023-01-29&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）" data-hashtags="AI工具"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-hashtag="AI工具"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）" data-web><i class="fa-brands fa-whatsapp fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.12.0/icons/line.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）" data-description=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.12.0/icons/myspace.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.12.0/icons/baidu.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://cs-blog-beta.vercel.app/anaconda%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E4%B8%80/" data-title="Anaconda使用教程（一）"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/ai%E5%B7%A5%E5%85%B7/' class="post-tag">AI工具</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E6%95%B0%E6%8D%AE%E9%9B%86-lccc/" class="post-nav-item" rel="prev" title="多轮对话数据集 LCCC"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>多轮对话数据集 LCCC</a>
+      <a href="/python%E7%88%AC%E8%99%AB%E6%95%99%E7%A8%8B%E4%B8%80/" class="post-nav-item" rel="next" title="Python爬虫教程（一）">Python爬虫教程（一）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment">Buy me a coffee</div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward">赞赏</label>
+    <div class="reward-ways"><div>
+            <img src="/images/alipay.png" alt="VocabVictor 支付宝">
+            <span data-animation>支付宝</span>
+          </div><div>
+            <img src="/images/wechatpay.png" alt="VocabVictor 微信">
+            <span data-animation>微信</span>
+          </div></div>
+  </div><div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div>
+    </main>
+  </div>
+  <div class="myposts"></div><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">VocabVictor</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider">闽ICP备2021013910号-1</span></div></div>
+  </footer><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><a href="https://github.com/hugo-fixit/FixIt" title="在 GitHub 上查看源代码"target="_blank" rel="external nofollow" class="github-corner right d-none-mobile"><svg viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/green/pace-theme-barber-shop.css"><script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script src="https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@2.6.1/plugins/zoom/lg-zoom.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/mhchem.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cell-watermark@1.0.3/src/watermark.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" async defer></script><script src="/js/cursor.0f1a37b499082732aec9d386eaf4e658cb02b227baa8b19578376cbca74e4067.js" integrity="sha256-Dxo3tJkIJzKuydOG6vTmWMsCsie6qLGVeDdsvKdOQGc=" defer></script><script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" defer></script><script src="/js/recent_posts.eee3aab1dea8c9fd7e05f4bf35074efecdfa78eebc65b2064a676f58727df34d.js" integrity="sha256-7uOqsd6oyf1+BfS/NQdO/s36eO68ZbIGSmdvWHJ9800=" defer></script><script src="/js/sun_moon.f12a9626305b733af80e13d7a6589e97ca3835cfe83e33143669234f7305a151.js" integrity="sha256-8SqWJjBbczr4DhPXpliel8o4Nc/oPjMUNmkjT3MFoVE=" defer></script><script src="/js/universe.3b714b9055cefdf0dbdb70c86eec31acc43e352ec71b1a2950ac1fd43a1bb8de.js" integrity="sha256-O3FLkFXO/fDb23DIbuwxrMQ+NS7HGxopUKwf1DobuN4=" defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"comment","lightTheme":"github-light","repo":"VocabVictor/cs-blog"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"twemoji":true,"watermark":{"appendto":".wrapper\u003emain","colspacing":30,"content":"","enable":true,"fontfamily":"inherit","fontsize":0.85,"height":20,"opacity":0.05,"rotate":15,"rowspacing":60,"width":150}};</script><script src="/js/theme.min.f113eb120ad05328772033acfac5d09b5175ec3892adbc5f0dd5917cb11a3395.js" integrity="sha256-8RPrEgrQUyh3IDOs+sXQm1F17DiSrbxfDdWRfLEaM5U=" defer></script></body>
+
+</html>
+<style>
+  :root {
+    --light-image: url(https://image-1304916025.cos.ap-nanjing.myqcloud.com/85908de2c2b3d397.webp);
+    --dark-image: url(https://cs-blog-1304916025.cos.ap-nanjing.myqcloud.com/yuanshen1.webp);
+  }
+
+  body[data-theme="light"] {
+    background-image: var(--light-image);
+  }
+
+  body[data-theme="dark"] {
+    background-image: var(--dark-image);
+  }
+
+  body {
+    background-image: var(--light-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+</style>
